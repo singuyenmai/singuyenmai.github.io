@@ -1,0 +1,9 @@
+---
+page-layout: full
+header-includes: |
+  <link href="index-styles.css" rel="stylesheet">
+---
+
+# "Good morning! <br> And in case I don't see ya, <br> good afternoon, good evening, and good night!"
+
+Hi 👋, I'm Si-Nguyen Mai.
