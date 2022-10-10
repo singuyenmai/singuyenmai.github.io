@@ -7,7 +7,7 @@ freeze: true
 title-block-banner: false
 
 # Author name of all blog posts
-author: 'Si-Nguyen Mai'
+author: "Si-Nguyen Mai"
 
 # Table of content settings
 toc: true
@@ -22,5 +22,12 @@ format:
 
 # Comment section
 comments: 
-  utterances: 
-    repo:  singuyenmai/blogComments 
+  giscus: 
+    repo:  "singuyenmai/main-site-blogComments"
+    repo-id: "R_kgDOILBrYQ"
+    category-id: "DIC_kwDOILBrYc4CR4k0"
+    mapping: "title"
+    reactions-enabled: true
+    input-position: "top"
+    loading: "lazy"
+    theme: "light"
