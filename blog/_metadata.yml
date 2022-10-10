@@ -23,7 +23,7 @@ format:
 # Comment section
 comments: 
   giscus: 
-    repo:  "singuyenmai/main-site-blogComments"
+    repo:  "singuyenmai/singuyenmai.github.io"
     repo-id: "R_kgDOILBrYQ"
     category-id: "DIC_kwDOILBrYc4CR4k0"
     mapping: "title"
