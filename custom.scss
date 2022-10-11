@@ -1,0 +1,67 @@
+/*-- scss:defaults --*/
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$metallic-gold: #d4af37 !default;
+
+$primary: $metallic-gold !default; // theme's primary color, also used for $navbar-bg (navbar background color)
+$navbar-fg: $white;
+$navbar-hl: $black;
+// $link-color: #8170ad;
+
+$toc-color: $white;
+$toc-font-size: 0.925rem !default;
+
+/*-- scss:rules --*/
+
+/* Top navigation bar */
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Roboto+Serif:wght@600&family=Roboto+Slab&display=swap');
+
+nav .nav-item:not(.compact){
+    font-family:  "Cormorant Garamond", "Roboto Slab", "Roboto Serif", "serif";
+    line-height: 25px;
+    font-size: $font-size-base * 1.5;
+    
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Satisfy&display=swap');
+.navbar-title{
+    font-family: "Satisfy", "Courgette", "cursive";
+    font-size: $font-size-base * 2.25;
+}
+
+/* table of contents (see quarto-1.1.251/share/formats/html/bootstrap/_bootstrap-rules.scss) */
+
+.sidebar nav[role="doc-toc"] > ul a {
+    border-left: 3px solid $gray-200;
+    padding-left: 0.6rem;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
+    border-left: 1px solid $toc-color;
+    color: $toc-color !important;
+    display: table; /* keep the background color wrapped tight */
+    background-color: #8170ad;
+  }
+  
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+    border-left: 1px solid $toc-color;
+    color: $toc-color !important;
+    display: table; /* keep the background color wrapped tight */
+    background-color: #8170ad;
+}

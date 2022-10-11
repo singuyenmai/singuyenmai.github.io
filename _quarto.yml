@@ -6,9 +6,9 @@ website:
   description: "Welcome to Si-Nguyen Mai's personal website."
   navbar:
     right:
-      - text: Blog
+      - text: "Blog"
         href: blog.qmd
-      - text: About
+      - text: "About"
         href: about.qmd
       - icon: github
         href: https://github.com/singuyenmai
@@ -25,8 +25,9 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: 
+      light: [cosmo, custom.scss]
+    highlight-style: atom-one
     # toc: true
 
 
