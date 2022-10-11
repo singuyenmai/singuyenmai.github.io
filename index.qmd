@@ -2,8 +2,14 @@
 page-layout: full
 header-includes: |
   <link href="index-styles.css" rel="stylesheet">
+from: markdown+emoji
 ---
 
-# "Good morning! <br> And in case I don't see ya, <br> good afternoon, good evening, and good night!"
+### "Good morning! <br> And in case I don't see ya, <br> good afternoon, good evening, and good night!"
 
+<br>
 Hi 👋, I'm Si-Nguyen Mai.
+
+I generate and use computer codes to understand and engineer life 🦠 🌏 🌌.
+
+Welcome to my virtual world!
