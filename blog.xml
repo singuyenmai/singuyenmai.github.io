@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Si-Nguyen Mai</title>
+<link>https://singuyenmai.github.io/blog.html</link>
+<atom:link href="https://singuyenmai.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Welcome to Si-Nguyen Mai's personal website.</description>
+<generator>quarto-1.1.251</generator>
+<lastBuildDate>Sat, 08 Oct 2022 17:00:00 GMT</lastBuildDate>
+<item>
+  <title>A chaotic butterfly</title>
+  <dc:creator>Si-Nguyen Mai</dc:creator>
+  <link>https://singuyenmai.github.io/blog/01_lorenz_attractor/lorenz_attractor.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="cell" data-tags="[]" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="im" style="color: #00769E;">from</span> scipy.integrate <span class="im" style="color: #00769E;">import</span> odeint</span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="im" style="color: #00769E;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;">as</span> plt</span>
+<span id="cb1-6"><span class="im" style="color: #00769E;">import</span> seaborn <span class="im" style="color: #00769E;">as</span> sns</span>
+<span id="cb1-7"></span>
+<span id="cb1-8"><span class="kw" style="color: #003B4F;">def</span> set_plot_style():</span>
+<span id="cb1-9">    sns.set_style(<span class="st" style="color: #20794D;">"white"</span>)</span>
+<span id="cb1-10">    font <span class="op" style="color: #5E5E5E;">=</span> {<span class="st" style="color: #20794D;">'family'</span>: <span class="st" style="color: #20794D;">'sans-serif'</span>, <span class="st" style="color: #20794D;">'serif'</span>: <span class="st" style="color: #20794D;">'Helvetica'</span>,</span>
+<span id="cb1-11">            <span class="st" style="color: #20794D;">'size'</span>: <span class="dv" style="color: #AD0000;">25</span>}</span>
+<span id="cb1-12">    plt.rc(<span class="st" style="color: #20794D;">'font'</span>, <span class="op" style="color: #5E5E5E;">**</span>font)</span>
+<span id="cb1-13">    legnd <span class="op" style="color: #5E5E5E;">=</span> {<span class="st" style="color: #20794D;">'fontsize'</span>: <span class="dv" style="color: #AD0000;">18</span>, <span class="st" style="color: #20794D;">'handlelength'</span>: <span class="fl" style="color: #AD0000;">1.5</span>}</span>
+<span id="cb1-14">    plt.rc(<span class="st" style="color: #20794D;">'legend'</span>, <span class="op" style="color: #5E5E5E;">**</span>legnd)</span>
+<span id="cb1-15">    mathtext <span class="op" style="color: #5E5E5E;">=</span> {<span class="st" style="color: #20794D;">'mathtext.default'</span>: <span class="st" style="color: #20794D;">'regular'</span> } </span>
+<span id="cb1-16">    plt.rcParams.update(mathtext)</span></code></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;"># define the initial system state (aka x, y, z positions in space)</span></span>
+<span id="cb2-2">initial_state <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">0.1</span>, <span class="dv" style="color: #AD0000;">0</span>, <span class="dv" style="color: #AD0000;">0</span>]</span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;"># define the system parameters sigma, rho, and beta</span></span>
+<span id="cb2-5">sigma <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">10.</span></span>
+<span id="cb2-6">rho   <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">28.</span></span>
+<span id="cb2-7">beta  <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">8.</span><span class="op" style="color: #5E5E5E;">/</span><span class="fl" style="color: #AD0000;">3.</span></span>
+<span id="cb2-8"></span>
+<span id="cb2-9"><span class="co" style="color: #5E5E5E;"># define the time points to solve for, evenly spaced between the start and end times</span></span>
+<span id="cb2-10">start_time <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">0</span></span>
+<span id="cb2-11">end_time <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">100</span></span>
+<span id="cb2-12">time_points <span class="op" style="color: #5E5E5E;">=</span> np.linspace(start_time, end_time, end_time<span class="op" style="color: #5E5E5E;">*</span><span class="dv" style="color: #AD0000;">1000</span>)</span></code></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="co" style="color: #5E5E5E;"># define the lorenz system</span></span>
+<span id="cb3-2"><span class="co" style="color: #5E5E5E;"># x, y, and z make up the system state, t is time, and sigma, rho, beta are the system parameters</span></span>
+<span id="cb3-3"><span class="kw" style="color: #003B4F;">def</span> lorenz_system(state, t):</span>
+<span id="cb3-4">    </span>
+<span id="cb3-5">    <span class="co" style="color: #5E5E5E;"># positions of x, y, z in space at the current time point</span></span>
+<span id="cb3-6">    x, y, z <span class="op" style="color: #5E5E5E;">=</span> state</span>
+<span id="cb3-7">    </span>
+<span id="cb3-8">    <span class="co" style="color: #5E5E5E;"># define the 3 ordinary differential equations known as the lorenz equations</span></span>
+<span id="cb3-9">    dx_dt <span class="op" style="color: #5E5E5E;">=</span> sigma <span class="op" style="color: #5E5E5E;">*</span> (y <span class="op" style="color: #5E5E5E;">-</span> x)</span>
+<span id="cb3-10">    dy_dt <span class="op" style="color: #5E5E5E;">=</span> x <span class="op" style="color: #5E5E5E;">*</span> (rho <span class="op" style="color: #5E5E5E;">-</span> z) <span class="op" style="color: #5E5E5E;">-</span> y</span>
+<span id="cb3-11">    dz_dt <span class="op" style="color: #5E5E5E;">=</span> x <span class="op" style="color: #5E5E5E;">*</span> y <span class="op" style="color: #5E5E5E;">-</span> beta <span class="op" style="color: #5E5E5E;">*</span> z</span>
+<span id="cb3-12">    </span>
+<span id="cb3-13">    <span class="co" style="color: #5E5E5E;"># return a list of the equations that describe the system</span></span>
+<span id="cb3-14">    <span class="cf" style="color: #003B4F;">return</span> [dx_dt, dy_dt, dz_dt]</span></code></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="co" style="color: #5E5E5E;"># use odeint() to solve a system of ordinary differential equations</span></span>
+<span id="cb4-2"><span class="co" style="color: #5E5E5E;"># the arguments are: </span></span>
+<span id="cb4-3"><span class="co" style="color: #5E5E5E;"># 1, a function - computes the derivatives</span></span>
+<span id="cb4-4"><span class="co" style="color: #5E5E5E;"># 2, a vector of initial system conditions (aka x, y, z positions in space)</span></span>
+<span id="cb4-5"><span class="co" style="color: #5E5E5E;"># 3, a sequence of time points to solve for</span></span>
+<span id="cb4-6"><span class="co" style="color: #5E5E5E;"># returns an array of x, y, and z value arrays for each time point, with the initial values in the first row</span></span>
+<span id="cb4-7">xyz <span class="op" style="color: #5E5E5E;">=</span> odeint(lorenz_system, initial_state, time_points)</span>
+<span id="cb4-8"></span>
+<span id="cb4-9"><span class="co" style="color: #5E5E5E;"># extract the individual arrays of x, y, and z values from the array of arrays</span></span>
+<span id="cb4-10">x <span class="op" style="color: #5E5E5E;">=</span> xyz[:, <span class="dv" style="color: #AD0000;">0</span>]</span>
+<span id="cb4-11">y <span class="op" style="color: #5E5E5E;">=</span> xyz[:, <span class="dv" style="color: #AD0000;">1</span>]</span>
+<span id="cb4-12">z <span class="op" style="color: #5E5E5E;">=</span> xyz[:, <span class="dv" style="color: #AD0000;">2</span>]</span></code></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="co" style="color: #5E5E5E;"># now plot two-dimensional cuts of the three-dimensional phase space</span></span>
+<span id="cb5-2">fig, ax <span class="op" style="color: #5E5E5E;">=</span> plt.subplots(figsize<span class="op" style="color: #5E5E5E;">=</span>(<span class="dv" style="color: #AD0000;">12</span>, <span class="dv" style="color: #AD0000;">10</span>))</span>
+<span id="cb5-3"></span>
+<span id="cb5-4">ax.scatter(x, z, c<span class="op" style="color: #5E5E5E;">=</span>time_points, cmap<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"Spectral"</span>, s<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">5</span>)</span>
+<span id="cb5-5"></span>
+<span id="cb5-6">plt.axis(<span class="st" style="color: #20794D;">"off"</span>)</span>
+<span id="cb5-7">fig.savefig(<span class="st" style="color: #20794D;">"lorenz_attractors.png"</span>, transparent<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">True</span>, bbox_inches<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"tight"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="https://singuyenmai.github.io/blog/01_lorenz_attractor/lorenz_attractor_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>I’ve learned to demonstrate the beauty of the Lorenz system from the following work:</p>
+<ul>
+<li><a href="https://geoffboeing.com/2016/12/animating-lorenz-attractor-python/" class="uri">https://geoffboeing.com/2016/12/animating-lorenz-attractor-python/</a></li>
+<li><a href="https://fromsystosys.netlify.app/2018/07/28/lorenz-attractor-animation-plotly/" class="uri">https://fromsystosys.netlify.app/2018/07/28/lorenz-attractor-animation-plotly/</a></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>modeling</category>
+  <guid>https://singuyenmai.github.io/blog/01_lorenz_attractor/lorenz_attractor.html</guid>
+  <pubDate>Sat, 08 Oct 2022 17:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Hello, Quarto</title>
+  <dc:creator>Si-Nguyen Mai</dc:creator>
+  <link>https://singuyenmai.github.io/blog/walkthough/walkthrough.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="markdown" class="level2">
+<h2 class="anchored" data-anchor-id="markdown">Markdown</h2>
+<p>Markdown is an easy to read and write text format:</p>
+<ul>
+<li>It’s <em>plain text</em> so works well with version control</li>
+<li>It can be <strong>rendered</strong> into HTML, PDF, and more</li>
+<li>Learn more at: <a href="https://quarto.org/docs/authoring/">Quarto</a></li>
+</ul>
+</section>
+<section id="code-cell" class="level2">
+<h2 class="anchored" data-anchor-id="code-cell">Code Cell</h2>
+<p>Here is a Python code cell:</p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;">import</span> os</span>
+<span id="cb1-2">os.cpu_count()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>4</code></pre>
+</div>
+</div>
+<p>For a demonstration of a line plot on a polar axis, see Figure&nbsp;1.</p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb3-2"><span class="im" style="color: #00769E;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;">as</span> plt</span>
+<span id="cb3-3"></span>
+<span id="cb3-4">r <span class="op" style="color: #5E5E5E;">=</span> np.arange(<span class="dv" style="color: #AD0000;">0</span>, <span class="dv" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">0.01</span>)</span>
+<span id="cb3-5">theta <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">2</span> <span class="op" style="color: #5E5E5E;">*</span> np.pi <span class="op" style="color: #5E5E5E;">*</span> r</span>
+<span id="cb3-6">fig, ax <span class="op" style="color: #5E5E5E;">=</span> plt.subplots(</span>
+<span id="cb3-7">  subplot_kw <span class="op" style="color: #5E5E5E;">=</span> {<span class="st" style="color: #20794D;">'projection'</span>: <span class="st" style="color: #20794D;">'polar'</span>} </span>
+<span id="cb3-8">)</span>
+<span id="cb3-9">ax.plot(theta, r)</span>
+<span id="cb3-10">ax.set_rticks([<span class="fl" style="color: #AD0000;">0.5</span>, <span class="dv" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">1.5</span>, <span class="dv" style="color: #AD0000;">2</span>])</span>
+<span id="cb3-11">ax.grid(<span class="va" style="color: #111111;">True</span>)</span>
+<span id="cb3-12">plt.show()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-polar" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://singuyenmai.github.io/blog/walkthough/walkthrough_files/figure-html/fig-polar-output-1.png" width="450" height="439" class="figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: A line plot on a polar axis</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="equation" class="level2">
+<h2 class="anchored" data-anchor-id="equation">Equation</h2>
+<p>Use LaTeX to write equations:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cchi'%20=%20%5Csum_%7Bi=1%7D%5En%20k_i%20s_i%5E2%0A"></p>
+
+
+</section>
+
+ ]]></description>
+  <category>draft</category>
+  <guid>https://singuyenmai.github.io/blog/walkthough/walkthrough.html</guid>
+  <pubDate>Wed, 05 Oct 2022 17:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>My First Blog Post</title>
+  <dc:creator>Si-Nguyen Mai</dc:creator>
+  <link>https://singuyenmai.github.io/blog/00_1st_blog/00_1st_blog.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This is my first blog post - a draft one for me to get to know Quarto.</p>
+</section>
+<section id="some-long-long-long-story" class="level2">
+<h2 class="anchored" data-anchor-id="some-long-long-long-story">Some long long long story</h2>
+<section id="someone-in-the-story-told-a-story" class="level3">
+<h3 class="anchored" data-anchor-id="someone-in-the-story-told-a-story">someone in the story told a story</h3>
+</section>
+</section>
+<section id="goodbye" class="level2">
+<h2 class="anchored" data-anchor-id="goodbye">Goodbye!</h2>
+
+
+</section>
+
+ ]]></description>
+  <category>draft</category>
+  <guid>https://singuyenmai.github.io/blog/00_1st_blog/00_1st_blog.html</guid>
+  <pubDate>Tue, 04 Oct 2022 17:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

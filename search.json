@@ -4,14 +4,42 @@
     "href": "blog.html",
     "title": "Si Nguyen’s Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\ndraft\n\n\n\n\nThis is a draft blog page.\n\n\n\n\n\n\nOct 9, 2022\n\n\n0 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodeling\n\n\n\n\nLorenz attractors\n\n\n\n\n\n\nOct 9, 2022\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\nmodeling\n\n\n\n\nLorenz attractors\n\n\n\n\n\n\nOct 9, 2022\n\n\n0 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndraft\n\n\n\n\nThis is a draft blog page.\n\n\n\n\n\n\nOct 6, 2022\n\n\n0 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndraft\n\n\n\n\nThis is a draft blog page.\n\n\n\n\n\n\nOct 5, 2022\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/01_lorenz_attractor/lorenz_attractor.html",
     "href": "blog/01_lorenz_attractor/lorenz_attractor.html",
     "title": "A chaotic butterfly",
     "section": "",
-    "text": "# define the initial system state (aka x, y, z positions in space)\ninitial_state = [0.1, 0, 0]\n\n# define the system parameters sigma, rho, and beta\nsigma = 10.\nrho   = 28.\nbeta  = 8./3.\n\n# define the time points to solve for, evenly spaced between the start and end times\nstart_time = 0\nend_time = 100\ntime_points = np.linspace(start_time, end_time, end_time*1000)\n\n\n# define the lorenz system\n# x, y, and z make up the system state, t is time, and sigma, rho, beta are the system parameters\ndef lorenz_system(state, t):\n    \n    # positions of x, y, z in space at the current time point\n    x, y, z = state\n    \n    # define the 3 ordinary differential equations known as the lorenz equations\n    dx_dt = sigma * (y - x)\n    dy_dt = x * (rho - z) - y\n    dz_dt = x * y - beta * z\n    \n    # return a list of the equations that describe the system\n    return [dx_dt, dy_dt, dz_dt]\n\n\n# use odeint() to solve a system of ordinary differential equations\n# the arguments are: \n# 1, a function - computes the derivatives\n# 2, a vector of initial system conditions (aka x, y, z positions in space)\n# 3, a sequence of time points to solve for\n# returns an array of x, y, and z value arrays for each time point, with the initial values in the first row\nxyz = odeint(lorenz_system, initial_state, time_points)\n\n# extract the individual arrays of x, y, and z values from the array of arrays\nx = xyz[:, 0]\ny = xyz[:, 1]\nz = xyz[:, 2]\n\n\n# now plot two-dimensional cuts of the three-dimensional phase space\nfig, ax = plt.subplots(figsize=(12, 10))\n\nax.scatter(x, z, c=time_points, cmap=\"Spectral\", s=5)\n\nplt.axis(\"off\")\nfig.savefig(\"lorenz_attractors.png\", transparent=True, bbox_inches=\"tight\")\n\n\n\n\n\nReferences\nI’ve learned to demonstrate the beauty of the Lorenz system from the following work:\n\nhttps://geoffboeing.com/2016/12/animating-lorenz-attractor-python/\nhttps://fromsystosys.netlify.app/2018/07/28/lorenz-attractor-animation-plotly/"
+    "text": "Code\nimport numpy as np\n\nfrom scipy.integrate import odeint\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\ndef set_plot_style():\n    sns.set_style(\"white\")\n    font = {'family': 'sans-serif', 'serif': 'Helvetica',\n            'size': 25}\n    plt.rc('font', **font)\n    legnd = {'fontsize': 18, 'handlelength': 1.5}\n    plt.rc('legend', **legnd)\n    mathtext = {'mathtext.default': 'regular' } \n    plt.rcParams.update(mathtext)"
+  },
+  {
+    "objectID": "blog/01_lorenz_attractor/lorenz_attractor.html#references",
+    "href": "blog/01_lorenz_attractor/lorenz_attractor.html#references",
+    "title": "A chaotic butterfly",
+    "section": "References",
+    "text": "References\nI’ve learned to demonstrate the beauty of the Lorenz system from the following work:\n\nhttps://geoffboeing.com/2016/12/animating-lorenz-attractor-python/\nhttps://fromsystosys.netlify.app/2018/07/28/lorenz-attractor-animation-plotly/"
+  },
+  {
+    "objectID": "blog/walkthough/walkthrough.html",
+    "href": "blog/walkthough/walkthrough.html",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Markdown is an easy to read and write text format:\n\nIt’s plain text so works well with version control\nIt can be rendered into HTML, PDF, and more\nLearn more at: Quarto"
+  },
+  {
+    "objectID": "blog/walkthough/walkthrough.html#code-cell",
+    "href": "blog/walkthough/walkthrough.html#code-cell",
+    "title": "Hello, Quarto",
+    "section": "Code Cell",
+    "text": "Code Cell\nHere is a Python code cell:\n\n\nCode\nimport os\nos.cpu_count()\n\n\n4\n\n\nFor a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
+  },
+  {
+    "objectID": "blog/walkthough/walkthrough.html#equation",
+    "href": "blog/walkthough/walkthrough.html#equation",
+    "title": "Hello, Quarto",
+    "section": "Equation",
+    "text": "Equation\nUse LaTeX to write equations:\n\\[\n\\chi' = \\sum_{i=1}^n k_i s_i^2\n\\]"
   },
   {
     "objectID": "blog/00_1st_blog/00_1st_blog.html",
@@ -21,11 +49,18 @@
     "text": "This is my first blog post - a draft one for me to get to know Quarto."
   },
   {
-    "objectID": "blog/00_1st_blog/00_1st_blog.html#someone-in-the-story-told-a-story",
-    "href": "blog/00_1st_blog/00_1st_blog.html#someone-in-the-story-told-a-story",
+    "objectID": "blog/00_1st_blog/00_1st_blog.html#some-long-long-long-story",
+    "href": "blog/00_1st_blog/00_1st_blog.html#some-long-long-long-story",
     "title": "My First Blog Post",
-    "section": "someone in the story told a story",
-    "text": "someone in the story told a story"
+    "section": "Some long long long story",
+    "text": "Some long long long story\n\nsomeone in the story told a story"
+  },
+  {
+    "objectID": "blog/00_1st_blog/00_1st_blog.html#goodbye",
+    "href": "blog/00_1st_blog/00_1st_blog.html#goodbye",
+    "title": "My First Blog Post",
+    "section": "Goodbye!",
+    "text": "Goodbye!"
   },
   {
     "objectID": "about.html",

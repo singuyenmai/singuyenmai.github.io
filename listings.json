@@ -2,8 +2,9 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/blog/00_1st_blog/00_1st_blog.html",
-      "/blog/01_lorenz_attractor/lorenz_attractor.html"
+      "/blog/01_lorenz_attractor/lorenz_attractor.html",
+      "/blog/walkthough/walkthrough.html",
+      "/blog/00_1st_blog/00_1st_blog.html"
     ]
   }
 ]
