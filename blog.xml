@@ -127,7 +127,7 @@
 <item>
   <title>Hello, Quarto</title>
   <dc:creator>Si-Nguyen Mai</dc:creator>
-  <link>https://singuyenmai.github.io/blog/walkthough/walkthrough.html</link>
+  <link>https://singuyenmai.github.io/blog/00_drafts/00_walkthrough.html</link>
   <description><![CDATA[ 
 
 
@@ -150,7 +150,7 @@
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;">import</span> os</span>
 <span id="cb1-2">os.cpu_count()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>4</code></pre>
 </div>
 </div>
@@ -174,7 +174,7 @@
 <div class="cell-output cell-output-display">
 <div id="fig-polar" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="https://singuyenmai.github.io/blog/walkthough/walkthrough_files/figure-html/fig-polar-output-1.png" width="450" height="439" class="figure-img"></p>
+<p><img src="https://singuyenmai.github.io/blog/00_drafts/00_walkthrough_files/figure-html/fig-polar-output-1.png" width="450" height="439" class="figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: A line plot on a polar axis</figcaption><p></p>
 </figure>
 </div>
@@ -191,37 +191,8 @@
 
  ]]></description>
   <category>draft</category>
-  <guid>https://singuyenmai.github.io/blog/walkthough/walkthrough.html</guid>
+  <guid>https://singuyenmai.github.io/blog/00_drafts/00_walkthrough.html</guid>
   <pubDate>Wed, 05 Oct 2022 17:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>My First Blog Post</title>
-  <dc:creator>Si-Nguyen Mai</dc:creator>
-  <link>https://singuyenmai.github.io/blog/00_1st_blog/00_1st_blog.html</link>
-  <description><![CDATA[ 
-
-
-
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This is my first blog post - a draft one for me to get to know Quarto.</p>
-</section>
-<section id="some-long-long-long-story" class="level2">
-<h2 class="anchored" data-anchor-id="some-long-long-long-story">Some long long long story</h2>
-<section id="someone-in-the-story-told-a-story" class="level3">
-<h3 class="anchored" data-anchor-id="someone-in-the-story-told-a-story">someone in the story told a story</h3>
-</section>
-</section>
-<section id="goodbye" class="level2">
-<h2 class="anchored" data-anchor-id="goodbye">Goodbye!</h2>
-
-
-</section>
-
- ]]></description>
-  <category>draft</category>
-  <guid>https://singuyenmai.github.io/blog/00_1st_blog/00_1st_blog.html</guid>
-  <pubDate>Tue, 04 Oct 2022 17:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

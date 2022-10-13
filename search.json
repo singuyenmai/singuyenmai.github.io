@@ -4,7 +4,28 @@
     "href": "blog.html",
     "title": "Si Nguyen’s Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\nmodeling\n\n\n\n\nLorenz attractors\n\n\n\n\n\n\nOct 9, 2022\n\n\n0 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndraft\n\n\n\n\nThis is a draft blog page.\n\n\n\n\n\n\nOct 6, 2022\n\n\n0 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndraft\n\n\n\n\nThis is a draft blog page.\n\n\n\n\n\n\nOct 5, 2022\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\nmodeling\n\n\n\n\nLorenz attractors\n\n\n\n\n\n\nOct 9, 2022\n\n\n0 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndraft\n\n\n\n\nThis is a draft blog page.\n\n\n\n\n\n\nOct 6, 2022\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/00_drafts/00_walkthrough.html",
+    "href": "blog/00_drafts/00_walkthrough.html",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Markdown is an easy to read and write text format:\n\nIt’s plain text so works well with version control\nIt can be rendered into HTML, PDF, and more\nLearn more at: Quarto"
+  },
+  {
+    "objectID": "blog/00_drafts/00_walkthrough.html#code-cell",
+    "href": "blog/00_drafts/00_walkthrough.html#code-cell",
+    "title": "Hello, Quarto",
+    "section": "Code Cell",
+    "text": "Code Cell\nHere is a Python code cell:\n\n\nCode\nimport os\nos.cpu_count()\n\n\n4\n\n\nFor a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
+  },
+  {
+    "objectID": "blog/00_drafts/00_walkthrough.html#equation",
+    "href": "blog/00_drafts/00_walkthrough.html#equation",
+    "title": "Hello, Quarto",
+    "section": "Equation",
+    "text": "Equation\nUse LaTeX to write equations:\n\\[\n\\chi' = \\sum_{i=1}^n k_i s_i^2\n\\]"
   },
   {
     "objectID": "blog/01_lorenz_attractor/lorenz_attractor.html",
@@ -19,48 +40,6 @@
     "title": "A chaotic butterfly",
     "section": "References",
     "text": "References\nI’ve learned to demonstrate the beauty of the Lorenz system from the following work:\n\nhttps://geoffboeing.com/2016/12/animating-lorenz-attractor-python/\nhttps://fromsystosys.netlify.app/2018/07/28/lorenz-attractor-animation-plotly/"
-  },
-  {
-    "objectID": "blog/walkthough/walkthrough.html",
-    "href": "blog/walkthough/walkthrough.html",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Markdown is an easy to read and write text format:\n\nIt’s plain text so works well with version control\nIt can be rendered into HTML, PDF, and more\nLearn more at: Quarto"
-  },
-  {
-    "objectID": "blog/walkthough/walkthrough.html#code-cell",
-    "href": "blog/walkthough/walkthrough.html#code-cell",
-    "title": "Hello, Quarto",
-    "section": "Code Cell",
-    "text": "Code Cell\nHere is a Python code cell:\n\n\nCode\nimport os\nos.cpu_count()\n\n\n4\n\n\nFor a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
-  },
-  {
-    "objectID": "blog/walkthough/walkthrough.html#equation",
-    "href": "blog/walkthough/walkthrough.html#equation",
-    "title": "Hello, Quarto",
-    "section": "Equation",
-    "text": "Equation\nUse LaTeX to write equations:\n\\[\n\\chi' = \\sum_{i=1}^n k_i s_i^2\n\\]"
-  },
-  {
-    "objectID": "blog/00_1st_blog/00_1st_blog.html",
-    "href": "blog/00_1st_blog/00_1st_blog.html",
-    "title": "My First Blog Post",
-    "section": "",
-    "text": "This is my first blog post - a draft one for me to get to know Quarto."
-  },
-  {
-    "objectID": "blog/00_1st_blog/00_1st_blog.html#some-long-long-long-story",
-    "href": "blog/00_1st_blog/00_1st_blog.html#some-long-long-long-story",
-    "title": "My First Blog Post",
-    "section": "Some long long long story",
-    "text": "Some long long long story\n\nsomeone in the story told a story"
-  },
-  {
-    "objectID": "blog/00_1st_blog/00_1st_blog.html#goodbye",
-    "href": "blog/00_1st_blog/00_1st_blog.html#goodbye",
-    "title": "My First Blog Post",
-    "section": "Goodbye!",
-    "text": "Goodbye!"
   },
   {
     "objectID": "about.html",

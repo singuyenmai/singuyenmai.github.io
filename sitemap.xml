@@ -2,26 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://singuyenmai.github.io/blog.html</loc>
-    <lastmod>2022-10-12T15:50:51.984Z</lastmod>
+    <lastmod>2022-10-13T14:42:00.666Z</lastmod>
+  </url>
+  <url>
+    <loc>https://singuyenmai.github.io/blog/00_drafts/00_walkthrough.html</loc>
+    <lastmod>2022-10-13T14:42:07.276Z</lastmod>
   </url>
   <url>
     <loc>https://singuyenmai.github.io/blog/01_lorenz_attractor/lorenz_attractor.html</loc>
-    <lastmod>2022-10-12T15:50:53.174Z</lastmod>
-  </url>
-  <url>
-    <loc>https://singuyenmai.github.io/blog/walkthough/walkthrough.html</loc>
-    <lastmod>2022-10-12T15:50:55.904Z</lastmod>
-  </url>
-  <url>
-    <loc>https://singuyenmai.github.io/blog/00_1st_blog/00_1st_blog.html</loc>
-    <lastmod>2022-10-12T15:50:56.661Z</lastmod>
+    <lastmod>2022-10-13T14:42:07.976Z</lastmod>
   </url>
   <url>
     <loc>https://singuyenmai.github.io/about.html</loc>
-    <lastmod>2022-10-12T15:50:57.414Z</lastmod>
+    <lastmod>2022-10-13T14:42:08.716Z</lastmod>
   </url>
   <url>
     <loc>https://singuyenmai.github.io/index.html</loc>
-    <lastmod>2022-10-12T15:50:57.964Z</lastmod>
+    <lastmod>2022-10-13T14:42:09.213Z</lastmod>
   </url>
 </urlset>
