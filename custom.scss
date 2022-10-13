@@ -12,11 +12,13 @@ $gray-900: #212529 !default;
 $black:    #000 !default;
 
 $metallic-gold: #d4af37 !default;
+$dark-gold: #b29126 !default;
 
 $primary: $metallic-gold !default; // theme's primary color, also used for $navbar-bg (navbar background color)
+$link-color: #8170ad;
+
 $navbar-fg: $white;
-$navbar-hl: $black;
-// $link-color: #8170ad;
+$navbar-hl: #4c4028;
 
 $toc-color: $white;
 $toc-font-size: 0.925rem !default;
@@ -56,12 +58,12 @@ nav .nav-item:not(.compact){
     border-left: 1px solid $toc-color;
     color: $toc-color !important;
     display: table; /* keep the background color wrapped tight */
-    background-color: #8170ad;
+    background-color: #c18152;
   }
   
 .sidebar nav[role="doc-toc"] ul > li > a.active {
     border-left: 1px solid $toc-color;
     color: $toc-color !important;
     display: table; /* keep the background color wrapped tight */
-    background-color: #8170ad;
+    background-color: #c18152;
 }

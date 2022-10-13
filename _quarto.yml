@@ -4,6 +4,8 @@ project:
 website:
   title: "Si-Nguyen Mai"
   description: "Welcome to Si-Nguyen Mai's personal website."
+  site-url: https://singuyenmai.github.io/
+  repo-url: https://github.com/singuyenmai/singuyenmai.github.io
   navbar:
     right:
       - text: "Blog"
@@ -28,6 +30,8 @@ format:
     theme: 
       light: [cosmo, custom.scss]
     highlight-style: atom-one
+    link-external-icon: true
+    link-external-newwindow: true
     # toc: true
 
 

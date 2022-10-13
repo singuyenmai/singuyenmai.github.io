@@ -1,0 +1,57 @@
+---
+title: "Hello, Quarto"
+date: '2022-10-06'
+categories: ['draft']
+description: "This is a draft blog page."
+# draft: true
+format:
+  html:
+    code-fold: true
+    code-tools:
+      source: repo
+---
+
+## Markdown
+
+Markdown is an easy to read and write text format:
+
+- It's _plain text_ so works well with version control
+- It can be **rendered** into HTML, PDF, and more
+- Learn more at: [Quarto](https://quarto.org/docs/authoring/)
+
+## Code Cell
+
+Here is a Python code cell:
+
+```{python}
+import os
+os.cpu_count()
+```
+
+For a demonstration of a line plot on a polar axis, see @fig-polar.
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+## Equation
+
+Use LaTeX to write equations:
+
+$$
+\chi' = \sum_{i=1}^n k_i s_i^2
+$$

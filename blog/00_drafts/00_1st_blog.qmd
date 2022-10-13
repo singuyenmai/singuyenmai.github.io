@@ -1,16 +1,17 @@
 ---
 title: "My First Blog Post"
-date: '2022-10-09'
+date: '2022-10-05'
 categories: ['draft']
 description: "This is a draft blog page."
+draft: true
 ---
 
-# Introduction
+## Introduction
 
 This is my first blog post - a draft one for me to get to know Quarto.
 
-# Some long long long story
+## Some long long long story
 
-## someone in the story told a story
+### someone in the story told a story
 
-# Goodbye!
+## Goodbye!
