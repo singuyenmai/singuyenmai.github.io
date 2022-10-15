@@ -15,13 +15,13 @@ $metallic-gold: #d4af37 !default;
 $dark-gold: #b29126 !default;
 
 $primary: $metallic-gold !default; // theme's primary color, also used for $navbar-bg (navbar background color)
-$link-color: #8170ad !default;
+$link-color: #8170ad !default; // color for text with hyper-links
 
-$navbar-fg: $white !default;
-$navbar-hl: #4c4028 !default;
+$navbar-fg: $white !default; // color of elements on the navigation bar
+$navbar-hl: #4c4028 !default; // color of elements on the navigation bar when being chosen
 
-$toc-color: $white;
-$toc-font-size: 0.925rem !default;
+$toc-color: $white; // color of "current" section name in the TOC 
+$toc-font-size: 0.925rem !default; // font size of text in the TOC
 
 /* Base fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
@@ -38,7 +38,6 @@ $font-nav-items: "Cormorant Garamond", "Roboto Slab", "Roboto Serif", sans-serif
 $headings-font-family: "Libre Baskerville", $font-nav-items !default;
 
 /*-- scss:rules --*/
-
 
 #title-block-header.quarto-title-block.default .quarto-title .title {
     font-family: $headings-font-family;

@@ -22,6 +22,6 @@ I modified one script in their package to fixed the issue with code tools & exte
 
   ```javascript
   // Inspect non-navigation links and adorn them if external
-  var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not(#quarto-show-all-code):not(#quarto-hide-all-code):not(#quarto-view-source):not(#quarto-code-tools-source)');
+  var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not(.dropdown-item)');
   ```
 
