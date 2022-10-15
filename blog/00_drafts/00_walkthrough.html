@@ -147,11 +147,17 @@ cookieconsent.run({
 
 <meta property="og:title" content="Si-Nguyen Mai - Hello, Quarto">
 <meta property="og:description" content="This is a draft blog page.">
+<meta property="og:image" content="https://singuyenmai.github.io//blog/00_drafts/thumbnail.png">
 <meta property="og:site-name" content="Si-Nguyen Mai">
+<meta property="og:image:height" content="878">
+<meta property="og:image:width" content="899">
 <meta name="twitter:title" content="Si-Nguyen Mai - Hello, Quarto">
 <meta name="twitter:description" content="This is a draft blog page.">
+<meta name="twitter:image" content="https://singuyenmai.github.io//blog/00_drafts/thumbnail.png">
 <meta name="twitter:creator" content="@SiNguyenMai">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="878">
+<meta name="twitter:image-width" content="899">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -502,7 +508,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not(#quarto-show-all-code):not(#quarto-hide-all-code):not(#quarto-view-source):not(#quarto-code-tools-source)');
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
