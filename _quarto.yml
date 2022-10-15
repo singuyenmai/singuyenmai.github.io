@@ -32,7 +32,4 @@ format:
     highlight-style: atom-one
     link-external-icon: true
     link-external-newwindow: true
-    # toc: true
-
-
-
+    smooth-scroll: true
