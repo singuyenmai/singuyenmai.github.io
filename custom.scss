@@ -85,3 +85,12 @@ nav .nav-item:not(.compact){
     display: table; /* keep the background color wrapped tight */
     background-color: #c18152;
 }
+
+/* Main page */
+
+#truman-hello{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: $gray-200;
+}

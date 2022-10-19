@@ -5,8 +5,15 @@ header-includes: |
 from: markdown+emoji
 ---
 
-# "Good morning! <br> And in case I don't see ya, <br> good afternoon, good evening, and good night!"
+<br>
 
+:::{.grid}
+:::{.g-col-10 .g-start-2 id='truman-hello'}
+# "Good morning! <br> And in case I don't see ya, <br> good afternoon, good evening, and good night!"
+:::
+:::
+
+<br>
 <br>
 Hi 👋, I'm Si-Nguyen Mai.
 
