@@ -4,6 +4,17 @@ h5 {
 }
 
 h1 {
-    font-size: 20pt;
+    margin-top: 30pt;
+    margin-bottom: 30pt;
+    margin-left: 10pt;
+    margin-right: 10pt;
+    font-size: 16pt;
+    color: #495057;
+    text-align: center;
+}
+
+body {
+    text-align: center;
+    font-size: 18pt;
 }
   
