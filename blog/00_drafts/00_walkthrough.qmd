@@ -3,7 +3,7 @@ title: "Hello, Quarto"
 date: '2022-10-06'
 categories: ['draft']
 description: "This is a draft blog page."
-# draft: true
+draft: true
 format:
   html:
     code-fold: true
