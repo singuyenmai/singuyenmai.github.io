@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-image','listing-date','listing-title','listing-reading-time','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -167,7 +167,7 @@ cookieconsent.run({
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="modeling">modeling <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Modelling">Modelling <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -215,13 +215,9 @@ cookieconsent.run({
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="modeling" data-listing-date-sort="1665248400000" data-listing-file-modified-sort="1666365636336" data-listing-reading-time-sort="0.815">
+<div class="quarto-post image-left" data-index="0" data-categories="Modelling,Python" data-listing-date-sort="1665248400000" data-listing-file-modified-sort="1668403021973" data-listing-reading-time-sort="5.155">
 <div class="thumbnail">
-<a href="./blog/01_lorenz_attractor/lorenz_attractor.html">
-<div class="thumbnail-image" style="height: 150px;">
-
-</div>
-</a><p><a href="./blog/01_lorenz_attractor/lorenz_attractor.html"></a></p>
+<p><a href="./blog/01_lorenz_attractor/lorenz_attractor.html"> <img src="./blog/01_lorenz_attractor/lorenz_butterfly.png" class="thumnail-image" style="height: 150px;"> </a></p>
 </div>
 <div class="body">
 <a href="./blog/01_lorenz_attractor/lorenz_attractor.html">
@@ -233,13 +229,16 @@ A chaotic butterfly
 </div>
 </a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('modeling'); return false;">
-modeling
+<div class="listing-category" onclick="window.quartoListingCategory('Modelling'); return false;">
+Modelling
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
 </div>
 </div>
 <a href="./blog/01_lorenz_attractor/lorenz_attractor.html">
 <div class="listing-description">
-<p>Lorenz attractors</p>
+<p>An elegant model of a dynamical system. Dynamics in shape of a butterfly. Chaos, determinism, and predictibility.</p>
 </div>
 </a>
 </div>
@@ -249,7 +248,7 @@ modeling
 Oct 9, 2022
 </div>
 <div class="listing-reading-time">
-0 min
+5 min
 </div>
 </a>
 </div>
