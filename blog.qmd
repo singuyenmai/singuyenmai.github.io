@@ -8,6 +8,7 @@ listing:
   sort-ui: true
   filter-ui: true
   fields: [image, date, title, reading-time, description, categories]
+  image-align: 'left'
   image-height: 150px
   feed: true
 page-layout: full
