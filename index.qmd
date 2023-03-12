@@ -3,20 +3,22 @@ page-layout: full
 header-includes: |
   <link href="index-styles.css" rel="stylesheet">
 from: markdown+emoji
+format:
+  html:
+    anchor-sections: false
 ---
 
 <br>
 
 :::{.grid}
-:::{.g-col-10 .g-start-2 id='truman-hello'}
+<!-- :::{.g-col-10 .g-start-2 id='truman-hello'} -->
+:::{.g-col-10 .g-start-0 id='truman-hello'}
 # "Good morning! <br> And in case I don't see ya, <br> good afternoon, good evening, and good night!"
 :::
 :::
 
 <br>
-<br>
-Hi 👋, I'm Si-Nguyen Mai.
 
-I generate and use computer codes to understand and engineer life 🦠 🌏.
-
-Welcome to my virtual world! 🌌
+| Hi 👋, I am Si-Nguyen Mai.
+| I generate and use computer codes, to understand and engineer life 🦠 🌏. 
+| Welcome, to my virtual world! 🌌

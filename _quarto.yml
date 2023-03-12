@@ -8,6 +8,8 @@ website:
   repo-url: https://github.com/singuyenmai/singuyenmai.github.io
   navbar:
     right:
+      # - text: "Projects"
+        # href: index.qmd#projects
       - text: "Blog"
         href: blog.qmd
       - text: "About"
@@ -32,4 +34,5 @@ format:
     highlight-style: atom-one
     link-external-icon: true
     link-external-newwindow: true
+    anchor-sections: true
     smooth-scroll: true

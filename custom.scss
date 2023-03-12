@@ -18,7 +18,8 @@ $primary: $metallic-gold !default; // theme's primary color, also used for $navb
 $link-color: #8170ad !default; // color for text with hyper-links
 
 $navbar-fg: $white !default; // color of elements on the navigation bar
-$navbar-hl: #4c4028 !default; // color of elements on the navigation bar when being chosen
+// $navbar-hl: #4c4028 !default; // color of elements on the navigation bar when being chosen
+$navbar-hl: $black !default; // color of elements on the navigation bar when being chosen
 
 $toc-color: $white; // color of "current" section name in the TOC 
 $toc-font-size: 0.925rem !default; // font size of text in the TOC
@@ -33,6 +34,8 @@ $toc-font-size: 0.925rem !default; // font size of text in the TOC
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=family=Roboto+Serif:wght@600&family=Roboto+Slab&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 $font-family-base: "Spectral", "Lato", "Source Sans Pro", "Nunito", "Roboto", sans-serif !default;
 $font-nav-items: "Cormorant Garamond", "Roboto Slab", "Roboto Serif", sans-serif !default;
@@ -62,7 +65,7 @@ nav .nav-item:not(.compact){
 
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Satisfy&display=swap');
 .navbar-title{
-    font-family: "Satisfy", "Courgette", "cursive";
+    font-family: "Special Elite", "Satisfy", "Courgette", "cursive";
     font-size: $font-size-base * 2.25;
 }
 
@@ -90,8 +93,8 @@ nav .nav-item:not(.compact){
 /* Main page */
 
 #truman-hello{
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     display: flex;
     background-color: $gray-200;
 }
