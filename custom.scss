@@ -14,14 +14,15 @@ $black:    #000 !default;
 $metallic-gold: #d4af37 !default;
 $dark-gold: #b29126 !default;
 
-$primary: $metallic-gold !default; // theme's primary color, also used for $navbar-bg (navbar background color)
+$primary: $metallic-gold !default; // theme's primary color
 $link-color: #8170ad !default; // color for text with hyper-links
 
+$navbar-bg: $metallic-gold !default; // navbar background color
 $navbar-fg: $white !default; // color of elements on the navigation bar
 // $navbar-hl: #4c4028 !default; // color of elements on the navigation bar when being chosen
 $navbar-hl: $black !default; // color of elements on the navigation bar when being chosen
 
-$toc-color: $white; // color of "current" section name in the TOC 
+$toc-color: #8170ad; // color of "current" section name in the TOC 
 $toc-font-size: 0.925rem !default; // font size of text in the TOC
 
 /* Base fonts */
@@ -69,25 +70,29 @@ nav .nav-item:not(.compact){
     font-size: $font-size-base * 2.25;
 }
 
-/* table of contents (see quarto-1.1.251/share/formats/html/bootstrap/_bootstrap-rules.scss) */
+/* table of contents (see quarto/share/formats/html/bootstrap/_bootstrap-rules.scss) */
 
 .sidebar nav[role="doc-toc"] > ul a {
     border-left: 3px solid $gray-200;
     padding-left: 0.6rem;
 }
 
+.sidebar nav[role="doc-toc"] ul > li > a.active,
 .sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
-    border-left: 1px solid $toc-color;
+    border-left: 3px solid $toc-color;
     color: $toc-color !important;
-    display: table; /* keep the background color wrapped tight */
-    background-color: #c18152;
-  }
-  
-.sidebar nav[role="doc-toc"] ul > li > a.active {
-    border-left: 1px solid $toc-color;
+    font-weight: 600;
+    // background-color: #c18152;
+    // display: table; /* keep the background color wrapped tight */
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a:hover,
+.sidebar nav[role="doc-toc"] ul > li > ul > li > a:hover {
+    border-left: 3px solid $toc-color;
     color: $toc-color !important;
-    display: table; /* keep the background color wrapped tight */
-    background-color: #c18152;
+    font-weight: 600;
+    // background-color: #c18152;
+    // display: table; /* keep the background color wrapped tight */
 }
 
 /* Main page */

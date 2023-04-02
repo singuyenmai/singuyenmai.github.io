@@ -25,3 +25,7 @@ I modified one script in their package to fixed the issue with code tools & exte
   var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not(.dropdown-item)');
   ```
 
+### Quarto v1.3.302 MacOS release
+
+- Navbar background color is no longer assigned by `$primary`, but by `$navbar-bg`
+- Fixed bug [#5067](https://github.com/quarto-dev/quarto-cli/issues/5067) according to commit [0445941](https://github.com/quarto-dev/quarto-cli/commit/0445941eafff77812312456d8a6bd4667259e680)
