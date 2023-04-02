@@ -6,15 +6,16 @@ h5 {
 h1 {
     margin-top: 30pt;
     margin-bottom: 30pt;
-    margin-left: 10pt;
+    margin-left: 20pt;
     margin-right: 10pt;
-    font-size: 16pt;
+    font-size: 11pt;
     color: #495057;
-    text-align: center;
+    text-align: left;
 }
 
 body {
-    text-align: center;
-    font-size: 18pt;
+    text-align: left;
+    font-size: 14pt;
+    font-family: 'Roboto';
 }
   
