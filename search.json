@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "“Good morning!  And in case I don’t see ya,  good afternoon, good evening, and good night!”",
-    "section": "",
-    "text": "“Good morning!  And in case I don’t see ya,  good afternoon, good evening, and good night!”\n\n\n\n\nHi 👋, I am Si-Nguyen Mai.\nI generate and use computer codes, to understand and engineer life 🦠 🌏.\nWelcome, to my virtual world! 🌌"
-  },
-  {
     "objectID": "blog/01_lorenz_attractor/lorenz_attractor.html",
     "href": "blog/01_lorenz_attractor/lorenz_attractor.html",
     "title": "A chaotic butterfly",
@@ -67,12 +60,19 @@
     "href": "about.html",
     "title": "Si-Nguyen Mai",
     "section": "",
-    "text": "Hi 👋, I am Si-Nguyen Mai. My original full name is Mai Thu Sĩ Nguyên. I’m from Vietnam in the Far East. I was born in the bustle Ho Chi Minh City, which is also known as Saigon, or the “Pearl of the Far East”.\nSo far, my intellectual path has crossed here and there. I got my BEng degree in Biomedical Engineering in Ho Chi Minh City, and then my MSc in Ecology & Evolution in Groningen, the Netherlands. During my Master’s, I also spent a few months in the UK for a research project. Now, I’m back in Ho Chi Minh City again, continuing my enthusiasm for science, especially science about microbes.\nMy current position is a Research Assistant at the Molecular Epidemiology Group at OUCRU Vietnam. In my work, I’m spending my time playing with bacterial genomic data, thinking and discussing about pathogenic microbes, paricularly their genetic profiles and their journeys in life.\nMy scientific interests are broad and dynamic, but over the past few years and probably more to come, I have just been sticking to the world of microbes, ecology, evolution, and health. I’m also specifically attracted to complex systems with inter-dependent relationships and emergent behaviours, such as host-microbiome systems. While studying these abstract concepts, I enjoy coding, learning and applying tech, analysing data, and modelling."
+    "text": "Edge of one world - Beginning of another.Scene from The Truman Show.\n\n\n\n\nHi 👋, I am Si-Nguyen Mai. My original full name is Mai Thu Sĩ Nguyên. I’m from Vietnam in the Far East. I was born in the bustle Ho Chi Minh City, which is also known as Saigon, or the “Pearl of the Far East”.\nSo far, my intellectual path has crossed here and there. I got my BEng degree in Biomedical Engineering in Ho Chi Minh City, and then my MSc in Ecology & Evolution in Groningen, the Netherlands. During my Master’s, I also spent a few months in the UK for a research project. Now, I’m back in Ho Chi Minh City again, continuing my enthusiasm for science, especially science about microbes.\nMy current position is a Research Assistant at the Molecular Epidemiology Group at OUCRU Vietnam. In my work, I spend my time to understand Klebsiella pneumoniae - a critical disease-causing and multidrug-resistant bacteria, by studying their behaviours in the lab and characterizing their genomes from DNA sequencing data.\nMy scientific interests are broad and dynamic, but over the past few years, and probably more to come, I have found myself in the world of microbes, ecology, evolution, and the science of health. I’m also specifically attracted to complex systems with inter-dependent relationships and emergent behaviours, such as host-microbiome systems. During my research, I enjoy programming, building mathematical/computational models, and analysing data."
+  },
+  {
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "Si-Nguyen Mai",
+    "section": "",
+    "text": "Quarto v1.1.251 Linux release\nI modified one script in their package to fix the issue with code tools & external links.\n\nFile: share/formats/html/templates/quarto-html.ejs\nLine #220-221:\n// window.location.href = sourceUrl;\nwindow.open(sourceUrl, '_blank'); // always open source code URL in new window\nLine #345-346:\n// Inspect non-navigation links and adorn them if external\nvar links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not(.dropdown-item)');\n\n\n\nQuarto v1.3.302 MacOS release\n\nNavbar background color is no longer assigned by $primary, but by $navbar-bg\nFixed bug #5067 according to commit 0445941"
   },
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "Si Nguyen’s Blog",
+    "title": "World of Words",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nA chaotic butterfly\n\n\n\n\n\n\n\nModelling\n\n\nPython\n\n\n\n\nAn elegant model of dynamical system. Dynamics in shape of a butterfly. Chaos, determinism, and predictibility.\n\n\n\n\n\n\nNov 1, 2022\n\n\n7 min\n\n\n\n\n\n\nNo matching items"
   }
