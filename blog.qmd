@@ -1,5 +1,5 @@
 ---
-title: "Si Nguyen's Blog"
+title: World of Words
 listing:
   contents: [/blog/**/*.qmd, /blog/**/*.ipynb]
   sort: "date desc"

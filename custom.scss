@@ -14,13 +14,13 @@ $black:    #000 !default;
 $metallic-gold: #d4af37 !default;
 $dark-gold: #b29126 !default;
 
-$primary: $metallic-gold !default; // theme's primary color
+$primary: $gray-900 !default; // theme's primary color
 $link-color: #8170ad !default; // color for text with hyper-links
 
-$navbar-bg: $metallic-gold !default; // navbar background color
+$navbar-bg: $gray-900 !default; // navbar background color
 $navbar-fg: $white !default; // color of elements on the navigation bar
 // $navbar-hl: #4c4028 !default; // color of elements on the navigation bar when being chosen
-$navbar-hl: $black !default; // color of elements on the navigation bar when being chosen
+$navbar-hl: #F4D731 !default; // color of elements on the navigation bar when being chosen
 
 $toc-color: #8170ad; // color of "current" section name in the TOC 
 $toc-font-size: 0.925rem !default; // font size of text in the TOC
@@ -37,6 +37,7 @@ $toc-font-size: 0.925rem !default; // font size of text in the TOC
 @import url('https://fonts.googleapis.com/css2?family=family=Roboto+Serif:wght@600&family=Roboto+Slab&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Satisfy&display=swap');
 
 $font-family-base: "Spectral", "Lato", "Source Sans Pro", "Nunito", "Roboto", sans-serif !default;
 $font-nav-items: "Cormorant Garamond", "Roboto Slab", "Roboto Serif", sans-serif !default;
@@ -64,10 +65,10 @@ nav .nav-item:not(.compact){
     
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Satisfy&display=swap');
 .navbar-title{
-    font-family: "Special Elite", "Satisfy", "Courgette", "cursive";
+    font-family: "Cormorant Garamond", "Special Elite", "Satisfy", "Courgette", "cursive";
     font-size: $font-size-base * 2.25;
+    font-weight: 600;
 }
 
 /* table of contents (see quarto/share/formats/html/bootstrap/_bootstrap-rules.scss) */
@@ -107,7 +108,14 @@ nav .nav-item:not(.compact){
 .body{
     text-align: justify;
 }
+.column-body{
+    text-align: justify;
+}
 
 .listing-description{
     text-align: left;
 }
+
+.figure-caption{
+    text-align: right;
+ }
