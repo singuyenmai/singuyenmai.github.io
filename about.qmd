@@ -24,12 +24,11 @@
 <br>
 
 :::{.column-body}
-Hi 👋, I am **_Si-Nguyen Mai_**. My original full name is **_Mai Thu Sĩ Nguyên_**. I'm from Vietnam in the Far East. 
-I was born in the bustle Ho Chi Minh City, which is also known as _Saigon_, or the "_Pearl of the Far East_”. 
+Hi 👋, I am **_Si-Nguyen Mai_**. My original full name is **_Mai Thu Sĩ Nguyên_**. I'm from Ho Chi Minh City of Vietnam, which is also known as _Saigon_, or the "_Pearl of the Far East_”. 
 
-So far, my intellectual path has crossed here and there. I got my BEng degree in Biomedical Engineering in Ho Chi Minh City, and then my MSc in Ecology & Evolution in Groningen, the Netherlands. During my Master's, I also spent a few months in the UK for a research project. Now, I'm back in Ho Chi Minh City again, continuing my enthusiasm for science, especially science about microbes.
+So far, my intellectual path has crossed here and there. I got my BEng degree in Biomedical Engineering in Ho Chi Minh City, and then my MSc in Ecology & Evolution in Groningen, the Netherlands. During my Master's, I also spent a few months in the UK for a research project. Now, I'm back in my hometown again, continuing my enthusiasm for science, especially science about microbes.
 
 My current position is a Research Assistant at the Molecular Epidemiology Group at OUCRU Vietnam. In my work, I spend my time to understand *Klebsiella pneumoniae* - a critical disease-causing and multidrug-resistant bacteria, by studying their behaviours in the lab and characterizing their genomes from DNA sequencing data.
 
-My scientific interests are broad and dynamic, but over the past few years, and probably more to come, I have found myself in the world of **microbes**, **ecology**, **evolution**, and **the science of health**. I'm also specifically attracted to **complex systems** with inter-dependent relationships and emergent behaviours, such as host-microbiome systems. During my research, I enjoy **programming**, building **mathematical/computational models**, and analysing **data**.
+My scientific interests are broad and dynamic, but over the past few years, and probably more to come, I have found myself in the world of **microbes**, **ecology**, **evolution**, and **the science of health**. I'm also immensely attracted to **complex systems** with inter-dependent relationships and emergent behaviours, such as host-microbiome systems. During my research, I enjoy **programming**, building **mathematical/computational models**, and analysing **data**.
 :::
