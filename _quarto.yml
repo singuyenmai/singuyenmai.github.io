@@ -4,8 +4,8 @@ project:
 website:
   title: "Si-Nguyen Mai"
   description: "Welcome to Si-Nguyen Mai's personal website."
-  site-url: https://singuyenmai.github.io/
-  repo-url: https://github.com/singuyenmai/singuyenmai.github.io
+  site-url: https://singuyen.root/
+  repo-url: https://github.com/singuyenmai/singuyen.root
   navbar:
     right:
       # - text: "Projects"
