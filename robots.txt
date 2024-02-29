@@ -1,1 +1,1 @@
-Sitemap: https://singuyen.root/sitemap.xml
+Sitemap: https://singuyenmai.github.io/sitemap.xml
