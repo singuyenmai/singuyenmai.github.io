@@ -44,7 +44,7 @@ Technically, what you're seeing is a 2D plot of $X$ against $Z$ values. I just h
 
 Okay. But hey, there are three variables in the system, where is the $Y$? 
 
-Sure, you shall be able to see it in 3D. This time, you can also interact with the plot. You can view the system entirely and, especially, inspect it from multiple angles. My visualiztion tricks won't be hidden anymore ;) Try to hold your pointer on the image and turn it around!
+Sure, you shall be able to see it in 3D. This time, you can also interact with the graph. You can view the system entirely and, especially, inspect it from multiple angles. Try to hold your pointer on the image and turn it around!
 
 <!-- {{< embed lorenz_system.ipynb#butterfly3d echo=false >}} -->
 
@@ -62,7 +62,9 @@ Sorry, it's such a long sentence. Let's play the animation below and follow the 
 Following the change of the system state through time, we can see that the pattern of change seems to repeat itself. 
 
 At first, the system state circles towards the right wing, yet once it lands on this wing, it circles out. <br>
-The circling goes on for a while until suddenly, the system switches back to the left wing, which then, again, circles out until it moves back to the right wing. <br>
+The circling goes on for a while until suddenly, the system switches back to the left wing, <br>
+which then, again, circles out until it moves back to the right wing. <br>
+
 This pattern keeps repeating and can go on infinitely! 
 
 If you look very carefully, you will notice that although the pattern is replicated, the system always takes new paths and never it goes back to an old state. Geometrically, this structure is considered as a _fractal_. (So now you know what the mathematicians are talking about? :D)
@@ -71,11 +73,13 @@ If you look very carefully, you will notice that although the pattern is replica
 
 The "strange" dynamics described above is a typical example of _chaotic behaviors_.
 
-(I'll try to make this straight) The system is chaotic because it never converges to any specific fixed state (aka _stable state_), but keeps changing over time and the cyles are never exactly the same. To see the chaos of the Lorenz system clearer, let's view separately the changes through time of each variable $X$, $Y$, and $Z$.
+In the language of the Mathematicians, _chaos_ is when a system never converges to any specific fixed state (aka _stable state_), but keeps changing over time and never goes back to a previous state. _"No man ever steps in the same river twice."_
+
+To see the chaos of the Lorenz system clearer, let's view separately the changes through time of each variable $X$, $Y$, and $Z$.
 
 {{< embed lorenz_system.ipynb#xyz echo=false >}}
 
-You can see, all the variables fluctuate wildly over time. They do not converge to any stable state, nor there is a certain periodic cycle in their dynamics. This, is _chaos_!
+You can see, all the variables fluctuate wildly over time. They do not converge to any stable state, nor there is a certain periodic cycle in their dynamics. Is this also considered as "_chaotic_" to you?
 
 On the contrary, an example of a _stable system_ is a population of organisms that follows logistic growth. In this case, the population at first grows exponentially, propbably because the resources are still abundant. However, since resources are limited, the population cannot grow to infinity but is restricted to a limit. Once the population size reaches this limit, the population experiences no more change and remains _stable_ there. (There should be death but you would expect the death and birth rates are equivalent). The population level at its limit, therefore, is referred as a _stable state_, or _stable attractor_ (it's like the population is attracted to grow towards it).
 
@@ -83,11 +87,11 @@ On the contrary, an example of a _stable system_ is a population of organisms th
 
 **What can be more odd about the Lorenz system?**
 
-Considering one big assumption of the Lorenz model, we may start feel a bit strange about the chaotic behaviors we've seen. 
+Considering one big assumption of the Lorenz model, we will see more of its beauty. 
 
-First, what the model assumed is that there are certain fixed rules for the changes of atmospheric convection, which, are represented by the ODEs. This assumption is _determinism_. And in the Lorenz system, those rules are also very simple, However, to what we've seen, the system behaviour is extremely complex and the dynamics are _chaotic_. So all of these tell us that, strangely yet beautifully, **chaos can come from determinism** and **complex dynamics/behaviours can come from just simple rules**.
+First, what the model assumed is that there are certain fixed rules for the changes of atmospheric convection, which, are represented by the ODEs. This assumption is _determinism_. And in the Lorenz system, those rules are also very simple, However, to what we've seen, the system behaviour is extremely complex and the dynamics are "_chaotic_". So all of these tell us that, strangely yet beautifully, **chaos can come from determinism** and **complex dynamics/behaviours can come from just simple rules**.
 
-Another way to interpret these is that when we observe and study the outside world, although some systems may appear to behave chaotically and their changes over time may seem so complex, there is still a possibility that such systems are actually determined by some fixed, and perhaps simple, rules. This brings lots more hope to our desire to understand the world 😄. For me, this interpretation is also special because it is similar to the philosophy of the ancient _I Ching_, or _The Book of Changes_. 
+Another way to interpret these is that when we observe and study the outside world, although some systems may appear to behave chaotically and their changes over time may seem so complex, there is still a possibility that such systems are actually determined by some fixed, and perhaps simple, rules. This brings lots more hope to our desire to understand the world 😄. For me, this interpretation is also special because it is similar to the philosophy of the ancient **_I Ching_**, or **_The Book of Changes_**. 
 
 ## Determinism & Predictibility
 
@@ -95,7 +99,7 @@ As _chaotic_ systems do not converge to any fixed stable states, they are sensit
 
 Wait, what?
 
-This means that if we change the initial conditions very very slightly, for instance by adding a super tiny variance to just one variable $X$ at time zero, then the dynamics will be changed as well. Let's take a look at the resulting dynamics.
+This means, if we change the initial conditions very very slightly, for instance by adding a super tiny variance to just one variable $X$ at time zero, then the dynamics will be changed as well. 
 
 {{< embed lorenz_system.ipynb#epsilon echo=false >}}
 
