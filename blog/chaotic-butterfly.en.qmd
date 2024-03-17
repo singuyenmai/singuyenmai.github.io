@@ -1,7 +1,7 @@
 ---
 title: "A chaotic butterfly"
 # categories: ['Math']
-description: "Chaos and determinism."
+description: "Chaos and Determinism."
 format:
     html:
         fig-align: center
@@ -29,7 +29,8 @@ $$
 
 I would not go into the details of the equations, nor why Lorenz designed them to be so, nor how to solve them. I assure you, we can completely move on without them. So let's now stick with this: $\sigma$, $\rho$, and $\beta$ are parameters - they are constant, and the solutions of these equations will be the functions describing how the system state, i.e. the variables, change through time - mathematically $X(t)$, $Y(t)$, and $Z(t)$.
 
-To see the "butterfly", I added some specifications to the model and in solving the equations: <br>
+To see the "butterfly", I added some specifications to the model and in solving the equations:
+
 1. $\sigma=10$, $\rho=28$, and $\beta=8/3$ <br>
 2. The timepoints at which we would like to know the values of $X$, $Y$, and $Z$. Here, I let them 100,000 timepoints evenly spaced from 0 to 100. <br>
 3. The initial condition, which is the system state at the initial timepoint. Here, it is a set of $X_{t=0} = 0.1, Y_{t=0}=0.0$, and $Z_{t=0}=0.0$.
@@ -58,11 +59,10 @@ Let's see it in 3D. This time, you can also interact with the graph. You can vie
 
 The beauty of the "butterfly" comes from the mix of warm and cold colors in both wings. Which insight can this mix of colors - the colors of time, give us into the behaviour of the system? Can you guess?
 
-<!-- Sorry, it's such a long sentence. -->
 Let's view the animation below, and follow the black dot that represents the system state.
 
 <!-- {{< embed lorenz_system.ipynb#animation echo=false >}} -->
-<p align="center"><iframe src="https://giphy.com/embed/DRV9v5BSsIz1Lx0xOs" width="480" height="402" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p align="center"><iframe src="https://giphy.com/embed/DRV9v5BSsIz1Lx0xOs" width="380" height="302" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 <p></p>
 
 The dot moves around in the XYZ space, showing us how the system state changes as time passes.
@@ -101,53 +101,38 @@ Once the limit for population size is reached, the population experiences no mor
 
 This limit of population level is referred as a _stable state_.
 
-It is also called the _stable attractor_. ...
+It is also called the _stable attractor_. Because it also looks like the system (population size) runs towards this level through time and when it reaches there, it sticks there. If we start the population from a variety of initial sizes, we will see that it will always eventually end up at the _stable state_, like it is attracted to it.
+
+{{< embed /workshop/lorenz_attractor/lorenz_system.ipynb#stable-attractor echo=false >}}
 
 ## Chaos
 
-There is also a feeling that there are some kinds of attractive forces at the centers of the two wings, which pull the system towards them when it approaches them. However, it's also look like that the system can only be attracted to some degree. Once it is on the area of the centers, it runs away from them. 
+Now looking at the Lorenz system again, there is also a feeling that there are some kinds of attractive forces at the centers of the two wings, which pull the system towards them when it approaches them. 
 
-The "strange" dynamics described above is a typical example of _chaotic behaviours_.
+<p align="center"><iframe src="https://giphy.com/embed/DRV9v5BSsIz1Lx0xOs" width="380" height="302" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p></p>
 
-<!-- In the language of the Mathematicians, _chaos_ is when a system never converges to any specific fixed state (aka _stable state_), but keeps changing over time and never goes back to a previous state.  -->
+However, it seems that the system can only be attracted to some degree. Once the system lands on one of the center area, it immediately runs away. 
 
-To see the chaos of the Lorenz system clearer, let's view separately the changes through time of each variable $X$, $Y$, and $Z$.
+The centers of the wings are _strange attractors_. They attract the system, but when it gets too close, they repulse it. These two _strange attractors_ result in the chaotic behaviour of the system, making it move back and forth between them and is always pushed and pulled to different paths.
+
+The chaos of the Lorenz system can be more apparent clearer when we view separately the changes through time of each variable $X$, $Y$, and $Z$.
 
 {{< embed /workshop/lorenz_attractor/lorenz_system.ipynb#xyz echo=false >}}
 
-You can see, all the variables fluctuate wildly over time. They never stops changing and there is no certain periodic cycle in their dynamics. <br>
-Is this behaviour also considered as "_chaotic_" to you?
+As you can see, all the variables fluctuate wildly over time. They never stops changing and there is no repeated cycle. The only repeated thing, or pattern, that we can find is that they fluctuate, and that's it. 
 
-## Sensitivity to initial conditions
+So that, is _chaos_.
 
-## Predictibility
-
-
-
+## Chaos and Determinism
 
 Considering one big assumption of the Lorenz model, we will see more of its beauty. 
 
 First, what the model assumed is that there are certain fixed rules for the changes of atmospheric convection, which, are represented by the ODEs. This assumption is _determinism_. And in the Lorenz system, those rules are also very simple, However, to what we've seen, the system behaviour is extremely complex and the dynamics are "_chaotic_". So all of these tell us that, strangely yet beautifully, **chaos can come from determinism** and **complex dynamics/behaviours can come from just simple rules**.
 
-Another way to interpret these is that when we observe and study the outside world, although some systems may appear to behave chaotically and their changes over time may seem so complex, there is still a possibility that such systems are actually determined by some fixed, and perhaps simple, rules. This brings lots more hope to our desire to understand the world 😄. For me, this interpretation is also special because it is similar to the philosophy of the ancient **_I Ching_**, or **_The Book of Changes_**. 
+Another way to interpret these is that when we observe and study the outside world, although some systems may appear to behave chaotically and their changes over time may seem so complex, there is still a possibility that such systems are actually determined by some fixed, and perhaps simple, rules. This brings lots more hope to our desire to understand the world 😄. 
 
-## Determinism & Predictibility
-
-As _chaotic_ systems do not converge to any fixed stable states, they are sensitive to initial conditions. 
-
-Wait, what?
-
-This means, if we change the initial conditions very very slightly, for instance by adding a super tiny variance to just one variable $X$ at time zero, then the dynamics will be changed as well. 
-
-{{< embed /workshop/lorenz_attractor/lorenz_system.ipynb#epsilon echo=false >}}
-
-*... work in progress ...*
-
-<!-- Complex dynamics obstruct predictions. It is absolutely certain that if a system is _deterministic_ and defined by a constant set of rules, then we sure can predict its future once we know exactly two things: (1) the rules dictating and (2) the system's current or past states. However, even assuming that we already have the (1) condition, it's still practically impossible to have perfectly precise measurements for the (2) condition. And this, is a problem that comes with predictibilities of _chaotic_ systems. -->
-
-## The West and The East
-
-*... work in progress ...*
+In my perspective, this interpretation aligns with a core philosophy of the ancient **_I Ching_**, or **_The Book of Changes_**. That is: the world changes, but there should be rules, and the rules are constant.
 
 ## References
 

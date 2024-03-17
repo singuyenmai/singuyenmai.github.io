@@ -1,7 +1,7 @@
 ---
 title: "Cánh bướm hỗn loạn"
 # categories: ['Math']
-description: "Hỗn loạn và tiền định."
+description: "Hỗn loạn và Tiền định."
 format:
     html:
         fig-align: center
@@ -9,8 +9,25 @@ image: "/workshop/lorenz_attractor/lorenz_butterfly.png"
 # notebook-view: false
 ---
 
+# Ngày xửa ngày xưa
+
+Câu này là để xem font chữ trong tiếng Việt thì nhìn ổn hay không.
+
 # Cánh bướm
 
-Đoạn này là về hình ảnh 2D.
+
+# Phân dạng
+
 
 # Điểm ổn định hấp dẫn
+
+
+# Hỗn loạn
+
+
+# Hỗn loạn và Tiền định
+
+
+
+# Tham khảo
+
