@@ -10,7 +10,7 @@
 <atom:link href="https://singuyenmai.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Welcome to Si-Nguyen Mai&#39;s personal website.</description>
 <generator>quarto-1.4.551</generator>
-<lastBuildDate>Sun, 17 Mar 2024 16:16:13 GMT</lastBuildDate>
+<lastBuildDate>Sun, 17 Mar 2024 16:25:31 GMT</lastBuildDate>
 <item>
   <title>Cánh bướm hỗn loạn</title>
   <link>https://singuyenmai.github.io/blog/chaotic-butterfly.vn.html</link>
@@ -46,7 +46,7 @@
 
  ]]></description>
   <guid>https://singuyenmai.github.io/blog/chaotic-butterfly.vn.html</guid>
-  <pubDate>Sun, 17 Mar 2024 16:16:13 GMT</pubDate>
+  <pubDate>Sun, 17 Mar 2024 16:25:31 GMT</pubDate>
   <media:content url="https://singuyenmai.github.io/workshop/lorenz_attractor/lorenz_butterfly.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 <item>
@@ -186,8 +186,8 @@ Black dot is the system state at time zero.
 <section id="chaos-and-determinism" class="level2">
 <h2 class="anchored" data-anchor-id="chaos-and-determinism">Chaos and Determinism</h2>
 <p>Considering one big assumption of the Lorenz model, we will see more of its beauty.</p>
-<p>First, what the model assumed is that there are certain fixed rules for the changes of atmospheric convection, which, are represented by the ODEs. This assumption is <em>determinism</em>. And in the Lorenz system, those rules are also very simple, However, to what we’ve seen, the system behaviour is extremely complex and the dynamics are “<em>chaotic</em>”. So all of these tell us that, strangely yet beautifully, <strong>chaos can come from determinism</strong> and <strong>complex dynamics/behaviours can come from just simple rules</strong>.</p>
-<p>Another way to interpret these is that when we observe and study the outside world, although some systems may appear to behave chaotically and their changes over time may seem so complex, there is still a possibility that such systems are actually determined by some fixed, and perhaps simple, rules. This brings lots more hope to our desire to understand the world 😄.</p>
+<p>First, what the model assumed is that there are certain fixed rules for the changes of atmospheric convection, which, are represented by the ODEs. This assumption is <em>determinism</em>. And in the Lorenz system, those rules are also very simple, However, to what we’ve seen, the system behaviour is extremely complex and the dynamics are “<em>chaotic</em>”. So all of these tell us that, strangely yet beautifully, <strong>chaos can come from determinism</strong> and <strong>complex changes can come from just simple rules</strong>.</p>
+<p>There is another way to interpret this. That is when we observe and study the outside world, although some systems may appear to behave chaotically and their changes over time may seem so complex, there is still a possibility that such systems are actually determined by some fixed, and perhaps simple, rules.</p>
 <p>In my perspective, this interpretation aligns with a core philosophy of the ancient <strong><em>I Ching</em></strong>, or <strong><em>The Book of Changes</em></strong>. That is: the world changes, but there should be rules, and the rules are constant.</p>
 </section>
 <section id="references" class="level2">
@@ -208,7 +208,7 @@ Black dot is the system state at time zero.
 
  ]]></description>
   <guid>https://singuyenmai.github.io/blog/chaotic-butterfly.en.html</guid>
-  <pubDate>Sun, 17 Mar 2024 16:16:13 GMT</pubDate>
+  <pubDate>Sun, 17 Mar 2024 16:25:31 GMT</pubDate>
   <media:content url="https://singuyenmai.github.io/workshop/lorenz_attractor/lorenz_butterfly.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 </channel>
