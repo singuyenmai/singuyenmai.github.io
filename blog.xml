@@ -10,7 +10,7 @@
 <atom:link href="https://singuyenmai.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Welcome to Si-Nguyen Mai&#39;s personal website.</description>
 <generator>quarto-1.4.551</generator>
-<lastBuildDate>Sun, 17 Mar 2024 16:40:31 GMT</lastBuildDate>
+<lastBuildDate>Sun, 17 Mar 2024 16:41:23 GMT</lastBuildDate>
 <item>
   <title>Cánh bướm hỗn loạn</title>
   <link>https://singuyenmai.github.io/blog/chaotic-butterfly.vn.html</link>
@@ -46,8 +46,8 @@
 
  ]]></description>
   <guid>https://singuyenmai.github.io/blog/chaotic-butterfly.vn.html</guid>
-  <pubDate>Sun, 17 Mar 2024 16:40:31 GMT</pubDate>
-  <media:content url="https://singuyenmai.github.io/workshop/lorenz_attractor/lorenz_butterfly.png" medium="image" type="image/png" height="115" width="144"/>
+  <pubDate>Sun, 17 Mar 2024 16:41:23 GMT</pubDate>
+  <media:content url="https://singuyenmai.github.io/workshop/lorenz_attractor/lorenz_butterfly.mirror.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 <item>
   <title>A chaotic butterfly</title>
@@ -208,7 +208,7 @@ Black dot is the system state at time zero.
 
  ]]></description>
   <guid>https://singuyenmai.github.io/blog/chaotic-butterfly.en.html</guid>
-  <pubDate>Sun, 17 Mar 2024 16:40:31 GMT</pubDate>
+  <pubDate>Sun, 17 Mar 2024 16:41:23 GMT</pubDate>
   <media:content url="https://singuyenmai.github.io/workshop/lorenz_attractor/lorenz_butterfly.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 </channel>
