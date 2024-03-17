@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chaos and Determinism.">
+
+<title>Sĩ Nguyên - A chaotic butterfly</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-2.29.1.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Sĩ Nguyên - A chaotic butterfly">
+<meta property="og:description" content="Chaos and Determinism.">
+<meta property="og:image" content="https://singuyenmai.github.io//workshop/lorenz_attractor/lorenz_butterfly.png">
+<meta property="og:site_name" content="Si-Nguyen Mai">
+<meta property="og:image:height" content="576">
+<meta property="og:image:width" content="720">
+<meta name="twitter:title" content="Sĩ Nguyên - A chaotic butterfly">
+<meta name="twitter:description" content="Chaos and Determinism.">
+<meta name="twitter:image" content="https://singuyenmai.github.io//workshop/lorenz_attractor/lorenz_butterfly.png">
+<meta name="twitter:creator" content="@SiNguyenMai">
+<meta name="twitter:image-height" content="576">
+<meta name="twitter:image-width" content="720">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Sĩ Nguyên</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/singuyenmai"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/si-nguyen-thu-mai/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/SiNguyenMai"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#once-upon-a-time" id="toc-once-upon-a-time" class="nav-link active" data-scroll-target="#once-upon-a-time">Once upon a time</a></li>
+  <li><a href="#the-butterfly" id="toc-the-butterfly" class="nav-link" data-scroll-target="#the-butterfly">The butterfly</a></li>
+  <li><a href="#fractal" id="toc-fractal" class="nav-link" data-scroll-target="#fractal">Fractal</a></li>
+  <li><a href="#stability" id="toc-stability" class="nav-link" data-scroll-target="#stability">Stability</a></li>
+  <li><a href="#chaos" id="toc-chaos" class="nav-link" data-scroll-target="#chaos">Chaos</a></li>
+  <li><a href="#chaos-and-determinism" id="toc-chaos-and-determinism" class="nav-link" data-scroll-target="#chaos-and-determinism">Chaos and Determinism</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="../workshop/lorenz_attractor/lorenz_system-preview.html"><i class="bi bi-journal-code"></i>The Lorenz system</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">A chaotic butterfly</h1>
+</div>
+
+<div>
+  <div class="description">
+    Chaos and Determinism.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="once-upon-a-time" class="level2">
+<h2 class="anchored" data-anchor-id="once-upon-a-time">Once upon a time</h2>
+<p>In 1963, meteorologist Edward Lorenz published a mathematical model for the dynamics of atmospheric convection. The equations are in very simplistic forms, but the resulting behaviour of the system is not. The way that its values change over time is enormously complex, obstructing attempts to predict its future state. Lorenz created the math, but he also discovered it. Following his work was the development of the important Chaos Theory, which covers concepts like Fractals, Predictibility, and Determinism. These names are more familiar to math specialists, but in the more general public, many probably have heard the term “<em>the Butterfly effect</em>” at some points in their lives. The Lorenz model is the mother of this concept.</p>
+</section>
+<section id="the-butterfly" class="level2">
+<h2 class="anchored" data-anchor-id="the-butterfly">The butterfly</h2>
+<p>The Lorenz system comprises of three dynamic elements, or variables, notated as <span class="math inline">\(X\)</span> (rate of convection), <span class="math inline">\(Y\)</span> (horizontal temperature), and <span class="math inline">\(Z\)</span> (vertical temperature). The dynamics of these variables then are described by a set of equations called ordinary differential equations (ODE). These equations represent the rates of change of the variables, and they are as follows:</p>
+<p><span class="math display">\[
+\frac{dX}{dt} = \sigma (Y - X)
+\]</span> <span class="math display">\[
+\frac{dY}{dt} = X (\rho - Z) - Y
+\]</span> <span class="math display">\[
+\frac{dZ}{dt} = X Y - \beta Z
+\]</span></p>
+<p>I would not go into the details of the equations, nor why Lorenz designed them to be so, nor how to solve them. I assure you, we can completely move on without them. So let’s now stick with this: <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(\rho\)</span>, and <span class="math inline">\(\beta\)</span> are parameters - they are constant, and the solutions of these equations will be the functions describing how the system state, i.e.&nbsp;the variables, change through time - mathematically <span class="math inline">\(X(t)\)</span>, <span class="math inline">\(Y(t)\)</span>, and <span class="math inline">\(Z(t)\)</span>.</p>
+<p>To see the “butterfly”, I added some specifications to the model and in solving the equations:</p>
+<ol type="1">
+<li><span class="math inline">\(\sigma=10\)</span>, <span class="math inline">\(\rho=28\)</span>, and <span class="math inline">\(\beta=8/3\)</span> <br></li>
+<li>The timepoints at which we would like to know the values of <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>. Here, I let them 100,000 timepoints evenly spaced from 0 to 100. <br></li>
+<li>The initial condition, which is the system state at the initial timepoint. Here, it is a set of <span class="math inline">\(X_{t=0} = 0.1, Y_{t=0}=0.0\)</span>, and <span class="math inline">\(Z_{t=0}=0.0\)</span>.</li>
+</ol>
+<p>Ready for the beauty?</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-butterfly2d" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chaotic-butterfly.en_files/figure-html/-workshop-lorenz_attractor-lorenz_system-butterfly2d-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>… Well, it’s already here.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><strong>So, what is this “butterfly” made of?</strong></p>
+<p>Technically, what you’re seeing is a 2D plot of <span class="math inline">\(X\)</span> against <span class="math inline">\(Z\)</span> values. I just hid the coordinate axes. Also, while the butterfly appears to be only a single colorful string, this line is actually just a connection of 100,000 dots that sit very close together.</p>
+<p>Wait, but why 100,000 dots? Remember that I talked about the timepoints? These dots are different “states” of <span class="math inline">\(X\)</span> and <span class="math inline">\(Z\)</span> in time and their varying colors represent this.</p>
+<p>Okay. But hey, there are three variables in the system. What it’s like when we also have <span class="math inline">\(Y\)</span> there?</p>
+<p>Let’s see it in 3D. This time, you can also interact with the graph. You can view the system entirely and inspect it from multiple angles. Try holding your pointer on the image, zooming in/out, and turning it around.</p>
+<!-- {{< embed lorenz_system.ipynb#butterfly3d false >}} -->
+<p align="center">
+<iframe width="510" height="420" frameborder="0" seamless="seamless" src="../workshop/lorenz_attractor/butterfly3d.html">
+</iframe>
+</p><figcaption class="figure-caption">
+Black dot is the system state at time zero.
+</figcaption>
+<p>
+</p>
+</section>
+<section id="fractal" class="level2">
+<h2 class="anchored" data-anchor-id="fractal">Fractal</h2>
+<p>The beauty of the “butterfly” comes from the mix of warm and cold colors in both wings. Which insight can this mix of colors - the colors of time, give us into the behaviour of the system? Can you guess?</p>
+<p>Let’s view the animation below, and follow the black dot that represents the system state.</p>
+<!-- {{< embed lorenz_system.ipynb#animation false >}} -->
+<p align="center">
+<iframe src="https://giphy.com/embed/DRV9v5BSsIz1Lx0xOs" width="380" height="302" frameborder="0" class="giphy-embed" allowfullscreen="">
+</iframe>
+</p><p>
+</p>
+<p>The dot moves around in the XYZ space, showing us how the system state changes as time passes.</p>
+<p>Following this movement, you shall see that there is a pattern in it - something is repeated again and again.</p>
+<p>At first, the system state circles on the right wing, and when it gets near the center area of left wing, it goes rapidly towards it. <br> However, once it lands on the left wing, it circles out and out - a movement that makes it gradually further away from the center of the left wing and closer to the right wing. <br> Eventually, it gets so close to the center area of the right wing and then, goes straight back to it. <br> Now this time, things are repeated. The system circles out away from the center of the right wing, until it gets close to and switches back to the left wing. <br></p>
+<p>This kind of pattern in the movement keeps repeating and seems like never-end. (It truly does!)</p>
+<p>Also, if you inspect the interactive 3D plot carefully, you will notice that there is no region where the line crosses or merges back to itself. This tells us that although there is a repeated pattern, the system always takes new paths and never it goes back to an old state.</p>
+<blockquote class="blockquote">
+<p><em>“No man ever steps in the same river twice.”</em></p>
+</blockquote>
+<p>The illustration below is an example of a <em>fractal</em> structure. Do you see the similiarities between it and the space-time path of the Lorenz system?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../workshop/lorenz_attractor/sierpinski-zoom41.gif" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="stability" class="level2">
+<h2 class="anchored" data-anchor-id="stability">Stability</h2>
+<!-- Extreme contrast to _chaos_ is _stability_. But what is _stability_ then?  -->
+<p>Before going further with all the weirdness of the Lorenz system, I would like to offer you a little short break - a system with a much simpler behaviour.</p>
+<p>We will now look at a model for the growth of a population of organisms.</p>
+<p>In this model, the population at first grows exponentially, propbably because the resources are still abundant. However, since resources are limited, the population cannot grow to infinity but is restricted to a limit.</p>
+<p>Starting with a very few number of individuals, the population grows very fast in the beginning. But eventually, the growth slows down and then, reaches the limit.</p>
+<p>Once the limit for population size is reached, the population experiences no more change and remains <em>stable</em> there. There should be death but you would expect the death and birth rates are equivalent.</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-logistic-growth" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chaotic-butterfly.en_files/figure-html/-workshop-lorenz_attractor-lorenz_system-logistic-growth-output-1.png" id="logistic-growth" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>This limit of population level is referred as a <em>stable state</em>.</p>
+<p>It is also called the <em>stable attractor</em>. Because it also looks like the system (population size) runs towards this level through time and when it reaches there, it sticks there. If we start the population from a variety of initial sizes, we will see that it will always eventually end up at the <em>stable state</em>, like it is attracted to it.</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-stable-attractor" class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chaotic-butterfly.en_files/figure-html/-workshop-lorenz_attractor-lorenz_system-stable-attractor-output-1.png" id="stable-attractor" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="chaos" class="level2">
+<h2 class="anchored" data-anchor-id="chaos">Chaos</h2>
+<p>Now looking at the Lorenz system again, there is also a feeling that there are some kinds of attractive forces at the centers of the two wings, which pull the system towards them when it approaches them.</p>
+<p align="center">
+<iframe src="https://giphy.com/embed/DRV9v5BSsIz1Lx0xOs" width="380" height="302" frameborder="0" class="giphy-embed" allowfullscreen="">
+</iframe>
+</p><p>
+</p>
+<p>However, it seems that the system can only be attracted to some degree. Once the system lands on one of the center area, it immediately runs away.</p>
+<p>The centers of the wings are <em>strange attractors</em>. They attract the system, but when it gets too close, they repulse it. These two <em>strange attractors</em> result in the chaotic behaviour of the system, making it move back and forth between them and is always pushed and pulled to different paths.</p>
+<p>The chaos of the Lorenz system can be more apparent clearer when we view separately the changes through time of each variable <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>.</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-xyz" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chaotic-butterfly.en_files/figure-html/-workshop-lorenz_attractor-lorenz_system-xyz-output-1.png" id="xyz" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>As you can see, all the variables fluctuate wildly over time. They never stops changing and there is no repeated cycle. The only repeated thing, or pattern, that we can find is that they fluctuate, and that’s it.</p>
+<p>So that, is <em>chaos</em>.</p>
+</section>
+<section id="chaos-and-determinism" class="level2">
+<h2 class="anchored" data-anchor-id="chaos-and-determinism">Chaos and Determinism</h2>
+<p>Considering one big assumption of the Lorenz model, we will see more of its beauty.</p>
+<p>First, what the model assumed is that there are certain fixed rules for the changes of atmospheric convection, which, are represented by the ODEs. This assumption is <em>determinism</em>. And in the Lorenz system, those rules are also very simple, However, to what we’ve seen, the system behaviour is extremely complex and the dynamics are “<em>chaotic</em>”. So all of these tell us that, strangely yet beautifully, <strong>chaos can come from determinism</strong> and <strong>complex dynamics/behaviours can come from just simple rules</strong>.</p>
+<p>Another way to interpret these is that when we observe and study the outside world, although some systems may appear to behave chaotically and their changes over time may seem so complex, there is still a possibility that such systems are actually determined by some fixed, and perhaps simple, rules. This brings lots more hope to our desire to understand the world 😄.</p>
+<p>In my perspective, this interpretation aligns with a core philosophy of the ancient <strong><em>I Ching</em></strong>, or <strong><em>The Book of Changes</em></strong>. That is: the world changes, but there should be rules, and the rules are constant.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>I’ve learned to demonstrate (computationally) the Lorenz system from the following work:</p>
+<ul>
+<li><a href="https://geoffboeing.com/2016/12/animating-lorenz-attractor-python/" class="uri">https://geoffboeing.com/2016/12/animating-lorenz-attractor-python/</a></li>
+<li><a href="https://fromsystosys.netlify.app/2018/07/28/lorenz-attractor-animation-plotly/" class="uri">https://fromsystosys.netlify.app/2018/07/28/lorenz-attractor-animation-plotly/</a></li>
+</ul>
+<p>Other pieces of introductory articles about strange attractors, the Butterfly effect, and fractals</p>
+<ul>
+<li><a href="https://fractalfoundation.org/OFC/OFC-7-1.html/" class="uri">https://fractalfoundation.org/OFC/OFC-7-1.html/</a></li>
+<li><a href="https://hypertextbook.com/chaos/strange/" class="uri">https://hypertextbook.com/chaos/strange/</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- <div>
+<hr>
+
+    <h3> Share </h3>
+
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" 
+data-size="large" data-hashtags="#blog" data-show-count="false">Tweet</a>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<hr>
+</div> -->
+
+
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-icon-color="black">
+    <hr>
+    <h3> Share </h3> 
+    <a class="a2a_button_email"></a>
+    <a class="a2a_button_linkedin"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_whatsapp"></a>
+    <a class="a2a_dd no-external" href="https://www.addtoany.com/share"></a>
+    </div>
+    <script async="" src="https://static.addtoany.com/menu/page.js"></script>
+    <script>
+        var a2a_config = a2a_config || {};
+        a2a_config.onclick = false;
+    </script>
+<!-- AddToAny END -->
+
+<!-- <div class="addthis_inline_share_toolbox">
+<hr>
+
+    <h3> Share </h3>
+    <script type="text/javascript" async src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6342896d2b6b094f"></script>
+
+</div> -->
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/singuyenmai\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="singuyenmai/singuyenmai.github.io" data-repo-id="R_kgDOILBrYQ" data-category="General" data-category-id="DIC_kwDOILBrYc4CR4k0" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="light">
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
