@@ -1,0 +1,16 @@
+---
+title: "Cánh bướm hỗn loạn"
+# categories: ['Math']
+description: "Hỗn loạn và tiền định."
+format:
+    html:
+        fig-align: center
+image: "/workshop/lorenz_attractor/lorenz_butterfly.png"
+# notebook-view: false
+---
+
+# Cánh bướm
+
+Đoạn này là về hình ảnh 2D.
+
+# Điểm ổn định hấp dẫn

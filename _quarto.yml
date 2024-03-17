@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Si-Nguyen Mai"
+  title: "Sĩ Nguyên"
   description: "Welcome to Si-Nguyen Mai's personal website."
   site-url: https://singuyenmai.github.io/
   repo-url: https://github.com/singuyenmai/singuyenmai.github.io
