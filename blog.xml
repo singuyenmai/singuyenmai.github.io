@@ -10,7 +10,7 @@
 <atom:link href="https://singuyenmai.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Welcome to Si-Nguyen Mai&#39;s personal website.</description>
 <generator>quarto-1.4.551</generator>
-<lastBuildDate>Sun, 17 Mar 2024 16:25:31 GMT</lastBuildDate>
+<lastBuildDate>Sun, 17 Mar 2024 16:29:03 GMT</lastBuildDate>
 <item>
   <title>Cánh bướm hỗn loạn</title>
   <link>https://singuyenmai.github.io/blog/chaotic-butterfly.vn.html</link>
@@ -46,7 +46,7 @@
 
  ]]></description>
   <guid>https://singuyenmai.github.io/blog/chaotic-butterfly.vn.html</guid>
-  <pubDate>Sun, 17 Mar 2024 16:25:31 GMT</pubDate>
+  <pubDate>Sun, 17 Mar 2024 16:29:03 GMT</pubDate>
   <media:content url="https://singuyenmai.github.io/workshop/lorenz_attractor/lorenz_butterfly.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 <item>
@@ -57,12 +57,12 @@
 
 
 
-<section id="once-upon-a-time" class="level2">
-<h2 class="anchored" data-anchor-id="once-upon-a-time">Once upon a time</h2>
+<section id="once-upon-a-time" class="level1">
+<h1>Once upon a time</h1>
 <p>In 1963, meteorologist Edward Lorenz published a mathematical model for the dynamics of atmospheric convection. The equations are in very simplistic forms, but the resulting behaviour of the system is not. The way that its values change over time is enormously complex, obstructing attempts to predict its future state. Lorenz created the math, but he also discovered it. Following his work was the development of the important Chaos Theory, which covers concepts like Fractals, Predictibility, and Determinism. These names are more familiar to math specialists, but in the more general public, many probably have heard the term “<em>the Butterfly effect</em>” at some points in their lives. The Lorenz model is the mother of this concept.</p>
 </section>
-<section id="the-butterfly" class="level2">
-<h2 class="anchored" data-anchor-id="the-butterfly">The butterfly</h2>
+<section id="the-butterfly" class="level1">
+<h1>The butterfly</h1>
 <p>The Lorenz system comprises of three dynamic elements, or variables, notated as <img src="https://latex.codecogs.com/png.latex?X"> (rate of convection), <img src="https://latex.codecogs.com/png.latex?Y"> (horizontal temperature), and <img src="https://latex.codecogs.com/png.latex?Z"> (vertical temperature). The dynamics of these variables then are described by a set of equations called ordinary differential equations (ODE). These equations represent the rates of change of the variables, and they are as follows:</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7BdX%7D%7Bdt%7D%20=%20%5Csigma%20(Y%20-%20X)%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7BdY%7D%7Bdt%7D%20=%20X%20(%5Crho%20-%20Z)%20-%20Y%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7BdZ%7D%7Bdt%7D%20=%20X%20Y%20-%20%5Cbeta%20Z%0A"></p>
 <p>I would not go into the details of the equations, nor why Lorenz designed them to be so, nor how to solve them. I assure you, we can completely move on without them. So let’s now stick with this: <img src="https://latex.codecogs.com/png.latex?%5Csigma">, <img src="https://latex.codecogs.com/png.latex?%5Crho">, and <img src="https://latex.codecogs.com/png.latex?%5Cbeta"> are parameters - they are constant, and the solutions of these equations will be the functions describing how the system state, i.e.&nbsp;the variables, change through time - mathematically <img src="https://latex.codecogs.com/png.latex?X(t)">, <img src="https://latex.codecogs.com/png.latex?Y(t)">, and <img src="https://latex.codecogs.com/png.latex?Z(t)">.</p>
@@ -100,8 +100,8 @@ Black dot is the system state at time zero.
 <p>
 </p>
 </section>
-<section id="fractal" class="level2">
-<h2 class="anchored" data-anchor-id="fractal">Fractal</h2>
+<section id="fractal" class="level1">
+<h1>Fractal</h1>
 <p>The beauty of the “butterfly” comes from the mix of warm and cold colors in both wings. Which insight can this mix of colors - the colors of time, give us into the behaviour of the system? Can you guess?</p>
 <p>Let’s view the animation below, and follow the black dot that represents the system state.</p>
 <!-- {{< embed lorenz_system.ipynb#animation false >}} -->
@@ -125,8 +125,8 @@ Black dot is the system state at time zero.
 </figure>
 </div>
 </section>
-<section id="stability" class="level2">
-<h2 class="anchored" data-anchor-id="stability">Stability</h2>
+<section id="stability" class="level1">
+<h1>Stability</h1>
 <!-- Extreme contrast to _chaos_ is _stability_. But what is _stability_ then?  -->
 <p>Before going further with all the weirdness of the Lorenz system, I would like to offer you a little short break - a system with a much simpler behaviour.</p>
 <p>We will now look at a model for the growth of a population of organisms.</p>
@@ -158,8 +158,8 @@ Black dot is the system state at time zero.
 </div>
 </div>
 </section>
-<section id="chaos" class="level2">
-<h2 class="anchored" data-anchor-id="chaos">Chaos</h2>
+<section id="chaos" class="level1">
+<h1>Chaos</h1>
 <p>Now looking at the Lorenz system again, there is also a feeling that there are some kinds of attractive forces at the centers of the two wings, which pull the system towards them when it approaches them.</p>
 <p align="center">
 <iframe src="https://giphy.com/embed/DRV9v5BSsIz1Lx0xOs" width="380" height="302" frameborder="0" class="giphy-embed" allowfullscreen="">
@@ -183,15 +183,15 @@ Black dot is the system state at time zero.
 <p>As you can see, all the variables fluctuate wildly over time. They never stops changing and there is no repeated cycle. The only repeated thing, or pattern, that we can find is that they fluctuate, and that’s it.</p>
 <p>So that, is <em>chaos</em>.</p>
 </section>
-<section id="chaos-and-determinism" class="level2">
-<h2 class="anchored" data-anchor-id="chaos-and-determinism">Chaos and Determinism</h2>
+<section id="chaos-and-determinism" class="level1">
+<h1>Chaos and Determinism</h1>
 <p>Considering one big assumption of the Lorenz model, we will see more of its beauty.</p>
 <p>First, what the model assumed is that there are certain fixed rules for the changes of atmospheric convection, which, are represented by the ODEs. This assumption is <em>determinism</em>. And in the Lorenz system, those rules are also very simple, However, to what we’ve seen, the system behaviour is extremely complex and the dynamics are “<em>chaotic</em>”. So all of these tell us that, strangely yet beautifully, <strong>chaos can come from determinism</strong> and <strong>complex changes can come from just simple rules</strong>.</p>
 <p>There is another way to interpret this. That is when we observe and study the outside world, although some systems may appear to behave chaotically and their changes over time may seem so complex, there is still a possibility that such systems are actually determined by some fixed, and perhaps simple, rules.</p>
 <p>In my perspective, this interpretation aligns with a core philosophy of the ancient <strong><em>I Ching</em></strong>, or <strong><em>The Book of Changes</em></strong>. That is: the world changes, but there should be rules, and the rules are constant.</p>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<section id="references" class="level1">
+<h1>References</h1>
 <p>I’ve learned to demonstrate (computationally) the Lorenz system from the following work:</p>
 <ul>
 <li><a href="https://geoffboeing.com/2016/12/animating-lorenz-attractor-python/" class="uri">https://geoffboeing.com/2016/12/animating-lorenz-attractor-python/</a></li>
@@ -208,7 +208,7 @@ Black dot is the system state at time zero.
 
  ]]></description>
   <guid>https://singuyenmai.github.io/blog/chaotic-butterfly.en.html</guid>
-  <pubDate>Sun, 17 Mar 2024 16:25:31 GMT</pubDate>
+  <pubDate>Sun, 17 Mar 2024 16:29:03 GMT</pubDate>
   <media:content url="https://singuyenmai.github.io/workshop/lorenz_attractor/lorenz_butterfly.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 </channel>
