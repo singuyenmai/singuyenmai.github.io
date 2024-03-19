@@ -10,45 +10,7 @@
 <atom:link href="https://singuyenmai.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Welcome to Si-Nguyen Mai&#39;s personal website.</description>
 <generator>quarto-1.4.551</generator>
-<lastBuildDate>Sun, 17 Mar 2024 16:41:23 GMT</lastBuildDate>
-<item>
-  <title>Cánh bướm hỗn loạn</title>
-  <link>https://singuyenmai.github.io/blog/chaotic-butterfly.vn.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="ngày-xửa-ngày-xưa" class="level1">
-<h1>Ngày xửa ngày xưa</h1>
-<p>Câu này là để xem font chữ trong tiếng Việt thì nhìn ổn hay không.</p>
-</section>
-<section id="cánh-bướm" class="level1">
-<h1>Cánh bướm</h1>
-</section>
-<section id="phân-dạng" class="level1">
-<h1>Phân dạng</h1>
-</section>
-<section id="điểm-ổn-định-hấp-dẫn" class="level1">
-<h1>Điểm ổn định hấp dẫn</h1>
-</section>
-<section id="hỗn-loạn" class="level1">
-<h1>Hỗn loạn</h1>
-</section>
-<section id="hỗn-loạn-và-tiền-định" class="level1">
-<h1>Hỗn loạn và Tiền định</h1>
-</section>
-<section id="tham-khảo" class="level1">
-<h1>Tham khảo</h1>
-
-
-</section>
-
- ]]></description>
-  <guid>https://singuyenmai.github.io/blog/chaotic-butterfly.vn.html</guid>
-  <pubDate>Sun, 17 Mar 2024 16:41:23 GMT</pubDate>
-  <media:content url="https://singuyenmai.github.io/workshop/lorenz_attractor/lorenz_butterfly.mirror.png" medium="image" type="image/png" height="115" width="144"/>
-</item>
+<lastBuildDate>Tue, 19 Mar 2024 12:51:08 GMT</lastBuildDate>
 <item>
   <title>A chaotic butterfly</title>
   <link>https://singuyenmai.github.io/blog/chaotic-butterfly.en.html</link>
@@ -208,7 +170,7 @@ Black dot is the system state at time zero.
 
  ]]></description>
   <guid>https://singuyenmai.github.io/blog/chaotic-butterfly.en.html</guid>
-  <pubDate>Sun, 17 Mar 2024 16:41:23 GMT</pubDate>
+  <pubDate>Tue, 19 Mar 2024 12:51:08 GMT</pubDate>
   <media:content url="https://singuyenmai.github.io/workshop/lorenz_attractor/lorenz_butterfly.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 </channel>
