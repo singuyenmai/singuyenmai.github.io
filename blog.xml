@@ -10,7 +10,7 @@
 <atom:link href="https://singuyenmai.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Welcome to Si-Nguyen Mai&#39;s personal website.</description>
 <generator>quarto-1.4.551</generator>
-<lastBuildDate>Sat, 23 Mar 2024 08:13:21 GMT</lastBuildDate>
+<lastBuildDate>Sat, 23 Mar 2024 08:17:34 GMT</lastBuildDate>
 <item>
   <title>A chaotic butterfly</title>
   <link>https://singuyenmai.github.io/blog/chaotic-butterfly.en.html</link>
@@ -170,7 +170,7 @@ Black dot is the system state at time zero.
 
  ]]></description>
   <guid>https://singuyenmai.github.io/blog/chaotic-butterfly.en.html</guid>
-  <pubDate>Sat, 23 Mar 2024 08:13:21 GMT</pubDate>
+  <pubDate>Sat, 23 Mar 2024 08:17:34 GMT</pubDate>
   <media:content url="https://singuyenmai.github.io/workshop/lorenz_attractor/lorenz_butterfly.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 </channel>
