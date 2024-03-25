@@ -2,10 +2,11 @@
 title: "Cánh bướm hỗn loạn"
 # categories: ['Math']
 description: "Hỗn loạn và Tiền định."
+draft: true
 format:
     html:
         fig-align: center
-image: "/workshop/lorenz_attractor/lorenz_butterfly.png"
+image: "/workshop/lorenz_attractor/lorenz_butterfly.mirror.png"
 # notebook-view: false
 ---
 

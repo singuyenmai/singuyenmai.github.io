@@ -4,24 +4,24 @@ listing:
   - id: vietnamese
     contents: [/blog/**/*.vn.qmd, /blog/**/*.vn.ipynb]
     sort: "date desc"
-    type: grid
-    # image-align: 'left'
-    grid-columns: 2
+    type: default
+    image-align: 'left'
+    # grid-columns: 2
     sort-ui: true
     filter-ui: true
     fields: [image, date, title, reading-time, description, categories]
-    # image-height: 150px
+    image-height: 150px
     feed: true   
   - id: english
     contents: [/blog/**/*.en.qmd, /blog/**/*.en.ipynb]
     sort: "date desc"
-    type: grid
-    # image-align: 'left'
-    grid-columns: 2
+    type: default
+    image-align: 'left'
+    # grid-columns: 2
     sort-ui: true
     filter-ui: true
     fields: [image, date, title, reading-time, description, categories]
-    # image-height: 150px
+    image-height: 150px
     feed: true
 page-layout: full
 title-block-banner: false
