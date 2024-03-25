@@ -1,0 +1,44 @@
+---
+title: "Gallery"
+title-block-banner: true
+lightbox: true
+page-layout: full
+---
+
+## Photographed
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));grid-gap: 1em; align-items: center;"}
+
+![Pù Luông, Thanh Hoá.](gallery/PXL_20230921_062003398~2.jpg){group="photos"}
+
+![Bụt. Buddha.](gallery/buddha.png){group="photos"}
+
+![Trăng lặn. Morning moon.](gallery/IMG_20210226_072249.jpg){group="photos"}
+
+<!-- <br> -->
+
+![Chim và Ngỗng. Coot and Goose.](gallery/IMG_20210301_163711.jpg){group="photos"}
+
+![Ngỗng Ai Cập. Egyptian goose.](gallery/IMG_20210301_163537.jpg){group="photos"}
+
+![Chiếc thuyền ngoài xa. A ship.](gallery/IMG_20200928_124954.jpg){group="photos"}
+
+---
+
+![Hoàng hôn buông. Sunset.](gallery/PXL_20221226_102303747.jpeg){group="photos"}
+
+---
+
+:::
+
+## Created
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); grid-gap: 1em; align-items: center;"}
+
+![](gallery/BMO.jpeg){width=30% fig-align="center" group="creations"}
+
+![Cánh bướm hỗn loạn. Chaotic butterfly.](workshop/lorenz_attractor/lorenz_butterfly.mirror.png){group="creations"}
+
+![](gallery/BMO.jpeg){width=30% fig-align="center" group="creations"}
+
+:::
